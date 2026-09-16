@@ -1,0 +1,90 @@
+# Sends Dontae one mechanical-engineering internship digest per day.
+#
+# IMPORTANT: GitHub only runs scheduled workflows from a repository's DEFAULT
+# branch, so this file has to be merged into the default branch before the
+# daily schedule starts working. You can always run it by hand from the
+# Actions tab before then.
+
+name: Internship digest
+
+on:
+  schedule:
+    # 11:00 UTC = 7am US Eastern in summer, 6am in winter.
+    # To check more often, add another line, e.g. hourly: - cron: "0 * * * *"
+    - cron: "0 11 * * *"
+  workflow_dispatch:        # the "Run workflow" button, for testing
+    inputs:
+      dry_run:
+        description: "Preview only - do not save or send email"
+        type: boolean
+        default: false
+
+# Never let two runs write to the repository at the same time.
+concurrency:
+  group: internship-digest
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # needed to commit the job history back
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: internship-digest/requirements.txt
+
+      - name: Install what the script needs
+        run: pip install -r internship-digest/requirements.txt
+
+      # These prove the tricky parts still behave. They are allowed to fail
+      # without stopping the run: if you edit config.yaml in a way a test did
+      # not expect, you should still get your email, with a red cross here as
+      # the warning sign. A silent non-delivery would be worse.
+      - name: Run the self-checks
+        continue-on-error: true
+        run: python test_digest.py
+        working-directory: internship-digest
+
+      - name: Build and send the digest
+        working-directory: internship-digest
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python digest.py --dry-run
+          else
+            python digest.py
+          fi
+
+      # always() so that a failed run still commits its error log.
+      - name: Save today's results back to the repository
+        if: ${{ always() && inputs.dry_run != true }}
+        run: |
+          git config user.name  "internship-digest bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add internship-digest/data
+          if git diff --staged --quiet; then
+            echo "Nothing changed today."
+          else
+            git commit -m "Job digest for $(date -u +%Y-%m-%d)"
+            # The repo may have moved on while we were running.
+            for attempt in 1 2 3 4; do
+              if git push; then
+                echo "Pushed."
+                break
+              fi
+              echo "Push failed; rebasing and retrying (attempt $attempt)."
+              git pull --rebase --autostash || true
+              sleep $((2 ** attempt))
+            done
+          fi

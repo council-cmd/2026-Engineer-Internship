@@ -1,0 +1,311 @@
+# ============================================================================
+#  SETTINGS FOR YOUR INTERNSHIP DIGEST
+#  ---------------------------------------------------------------------------
+#  This is the ONLY file you need to edit. Everything is plain English.
+#
+#  HOW TO EDIT: lines starting with "#" are notes to you and are ignored.
+#  Each "- something" line is one item in a list. To add an item, copy an
+#  existing line and change the words. Keep the two spaces and the dash.
+#  Letter case does not matter ("Mechanical" and "mechanical" both work).
+# ============================================================================
+
+email:
+  # Where your daily digest is sent.
+  to: "dontae.blake@outlook.com"
+
+  # Who it appears to come from. Leave this alone unless you have set up
+  # your own domain in Resend (most people never do).
+  from: "Internship Digest <onboarding@resend.dev>"
+
+  # Subject lines. {n} is replaced by the number of new jobs.
+  subject_found: "{n} new mechanical internship(s) - {date}"
+  subject_empty: "No new mechanical internships today - {date}"
+  subject_error: "[ACTION NEEDED] Your internship digest failed - {date}"
+
+  # The most jobs to list in one email. Anything beyond this is still saved
+  # to your spreadsheet, just not shown in the email body.
+  max_in_email: 25
+
+
+source:
+  # The file the tool reads. Do not change unless the repo moves.
+  readme_url: "https://raw.githubusercontent.com/jobright-ai/2026-Engineer-Internship/master/README.md"
+
+
+jobright:
+  # Whether to open each job link to read its full description.
+  # Descriptions are what make visa filtering accurate, so leave this on.
+  # If Jobright blocks us, the tool notices, keeps working without
+  # descriptions, and tells you so in the email.
+  fetch_descriptions: true
+
+  # Seconds to wait between requests, so we are polite to their servers.
+  delay_seconds: 3.0
+
+  # Never open more than this many job pages in one run (keeps runs short).
+  max_pages_per_run: 60
+
+  # If this many fetches fail in a row, assume we are blocked and stop trying.
+  give_up_after_failures: 8
+
+
+location:
+  # CPT and OPT only allow work inside the United States, so non-US
+  # postings are dropped. Set to false to keep them (flagged as non-US).
+  us_only: true
+
+  # States you would most like to work in. Jobs here get a fit-score bonus.
+  # Use the two-letter code. Leave the list empty to turn the bonus off.
+  preferred_states:
+    - FL
+    - GA
+    - NC
+    - SC
+    - AL
+    - TN
+
+
+# ============================================================================
+#  TITLE FILTERING
+# ============================================================================
+
+titles:
+  # --- KEEP: a job is kept if its title contains any of these -------------
+  # "strong" terms are unmistakably mechanical and are kept even if the
+  # title ALSO names another discipline (e.g. "Mechanical/Electrical Intern"
+  # is still worth seeing).
+  keep_strong:
+    - mechanical
+    - mechatronics
+    - manufacturing
+    - thermal
+    - hvac
+    - robotics
+    - robotic
+    - aerospace
+    - automotive
+    - design engineer
+    - product engineer
+    - test engineer
+    - r&d
+    - research and development
+    - cad
+    - solidworks
+    - tooling
+    - fluid
+    - propulsion
+    - materials engineer
+
+  # "moderate" terms are often mechanical but not always. These are kept
+  # only when the title does not name a different discipline.
+  keep_moderate:
+    - automation
+    - quality engineer
+    - process engineer
+    - industrial engineer
+    - maintenance engineer
+    - reliability engineer
+    - systems engineer
+    - controls engineer
+    - co-op
+    - coop
+    - engineering intern
+    - engineer intern
+    - engineering internship
+
+  # --- DROP: a job is removed if its title contains any of these ----------
+  # (unless a "strong" term above is also present)
+  drop:
+    - software
+    - front end
+    - frontend
+    - back end
+    - backend
+    - full stack
+    - web develop
+    - civil
+    - structural
+    - geotechnical
+    - transportation
+    - roadway
+    - bridge
+    - surveying
+    - electrical
+    - power systems
+    - cyber
+    - information security
+    - network
+    - data scien
+    - data analy
+    - data engineer
+    - machine learning
+    - artificial intelligence
+    - construction
+    - field engineer      # nearly always heavy-construction work
+    - fire protection
+    - life safety
+    - tunnel
+    - estimator
+    - surveyor
+    - land development
+    - water resources
+    - wastewater
+    - traffic
+    - nurse
+    - nursing
+    - clinical
+    - pharma
+    - biolog
+    - chemistry
+    - chemical
+    - environmental
+    - accounting
+    - finance
+    - marketing
+    - sales
+    - human resources
+    - recruiting
+    - legal
+    - supply chain
+    - logistics
+    - procurement
+    - it support
+    - help desk
+    - devops
+    - cloud
+
+  # --- ALWAYS DROP: removed no matter what, even with a strong term ------
+  drop_always:
+    - high school
+    - highschool
+    - phd
+    - ph.d
+    - doctoral
+    - postdoc
+    - skillbridge      # for transitioning US military only
+    - hiring our heroes
+
+
+# ============================================================================
+#  VISA FILTERING  (the most important part)
+# ============================================================================
+
+visa:
+  # --- EXCLUDED (bucket C): any of these phrases removes the job ---------
+  exclude_phrases:
+    - "u.s. citizenship required"
+    - "us citizenship required"
+    - "united states citizenship"
+    - "must be a u.s. citizen"
+    - "must be a us citizen"
+    - "us citizens only"
+    - "u.s. citizens only"
+    - "citizenship is required"
+    - "u.s. person"
+    - "us person"
+    - "usperson"
+    - "security clearance"
+    - "active clearance"
+    - "ability to obtain a clearance"
+    - "eligible to obtain a security clearance"
+    - "secret clearance"
+    - "top secret"
+    - "ts/sci"
+    - "polygraph"
+    - "itar"
+    - "export control"
+    - "export-controlled"
+    - "ear99"
+    - "green card holder"
+    - "permanent resident only"
+    - "no sponsorship"
+    - "not provide sponsorship"
+    - "unable to sponsor"
+    - "will not sponsor"
+    - "does not sponsor"
+    - "not eligible for sponsorship"
+    - "without sponsorship now or in the future"
+    - "cannot provide visa"
+
+  # --- LIKELY OK (bucket A): these phrases are a good sign ---------------
+  positive_phrases:
+    - "sponsorship available"
+    - "will sponsor"
+    - "visa sponsorship"
+    - "h-1b"
+    - "h1b"
+    - "cpt"
+    - "curricular practical training"
+    - "optional practical training"
+    - "cpt/opt"
+    - "opt/cpt"
+    - "f-1"
+    - "f1 visa"
+    - "international students welcome"
+    - "open to international"
+    - "we sponsor"
+
+  # --- Employers that almost always require US-person status -------------
+  # These are excluded even when we cannot read a description, because
+  # defense and national-lab work is export-controlled by law.
+  exclude_companies:
+    - lockheed
+    - raytheon
+    - rtx
+    - northrop
+    - grumman
+    - general dynamics
+    - l3harris
+    - l3 harris
+    - bae systems
+    - anduril
+    - leidos
+    - booz allen
+    - saic
+    - caci
+    - peraton
+    - mitre
+    - aerojet
+    - rocketdyne
+    - huntington ingalls
+    - electric boat
+    - bath iron works
+    - collins aerospace
+    - sierra nevada corp
+    - draper
+    - battelle
+    - sandia
+    - los alamos
+    - lawrence livermore
+    - oak ridge national
+    - idaho national lab
+    - pacific northwest national
+    - applied physics laboratory
+    - nuwc
+    - naval
+    - defense
+    - missile
+    - munition
+    - torpedo
+
+  # Keep jobs we could not classify? These are bucket B ("unclear").
+  # true = show them flagged, false = hide them. Recommended: true.
+  include_unclear: true
+
+
+# ============================================================================
+#  FIT SCORE  (0-100, higher is better; used to sort your email)
+# ============================================================================
+
+scoring:
+  strong_title: 40        # title is clearly mechanical
+  moderate_title: 26      # title is probably mechanical
+  generic_title: 18       # plain "Engineering Intern"
+  visa_likely_ok: 30      # bucket A
+  visa_unclear: 12        # bucket B
+  preferred_state: 10     # in one of your preferred states
+  remote: 10              # fully remote
+  hybrid: 8               # hybrid
+  onsite: 4               # on site
+  mentions_cpt_opt: 12    # description mentions CPT/OPT by name
+  posted_today: 5         # posted the same day we found it
