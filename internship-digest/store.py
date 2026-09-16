@@ -156,6 +156,32 @@ class Spreadsheet:
         _atomic_write(self.path, buffer.getvalue())
 
 
+def write_summary(path: Path, payload: dict) -> None:
+    """Write the machine-readable result of this run.
+
+    This file is the handoff between the two halves of the system: GitHub
+    Actions collects the jobs and writes this, then a scheduled Claude
+    session reads it and sends the phone notification. It is always written,
+    including when the run fails, so a failure is visible rather than silent.
+    """
+    _atomic_write(path, json.dumps(payload, indent=1, ensure_ascii=False))
+
+
+def summarise_job(job) -> dict:
+    """One job, reduced to what the notification needs."""
+    return {
+        "title": job.title,
+        "company": job.company,
+        "location": _location_label(job),
+        "area_group": job.area_group,
+        "work_model": job.work_model,
+        "visa_bucket": job.visa_bucket,
+        "visa_reason": job.visa_reason,
+        "fit_score": job.fit_score,
+        "url": job.url,
+    }
+
+
 def _location_label(job) -> str:
     if job.city and job.state:
         return f"{job.city}, {job.state}"

@@ -13,9 +13,24 @@ English.
 
 ## 1. What you will get
 
-**One email a day.** Either a list of new jobs, or a one-line note saying
-nothing new came up. If the program itself breaks, it emails you about that too,
-so silence never means "no jobs" when it really means "it stopped working".
+**One phone notification a day**, through the Claude app. Either a list of new
+jobs, or a note saying nothing new came up. If the program breaks, you are told
+that too, so silence never means "no jobs" when it really means "it stopped
+working".
+
+There are two halves, and they are deliberately separate:
+
+1. **GitHub Actions** wakes up each morning, reads the job list, filters it, and
+   saves the result into this repository as `data/latest_digest.json`. It sends
+   nothing. It runs on GitHub's own machines, which have unrestricted internet,
+   which is what lets it open job pages and read descriptions.
+2. **A Claude Routine** wakes up shortly afterwards, reads that file, and pushes
+   the notification to your phone.
+
+Splitting it this way keeps the good internet access for the part that needs it,
+and means you never have to set up an email account or an API key.
+
+Email delivery is still built and tested if you ever want it - see section 10.
 
 Each job in the email shows a coloured visa label:
 
@@ -61,7 +76,7 @@ You will still receive only one email per day; the extra runs just collect jobs.
 
 ---
 
-## 3. Setting it up on GitHub (about 15 minutes, free)
+## 3. Setting it up on GitHub (about 3 minutes, free)
 
 ### Step A - Turn on Actions
 
@@ -76,48 +91,27 @@ You will still receive only one email per day; the extra runs just collect jobs.
 > GitHub switches scheduled jobs **off by default in forks**. If you skip this,
 > nothing will ever run and you will not be told why.
 
-### Step B - Get a free email key
+### Step B - Nothing to do
 
-Your Outlook address can receive the digest, but Microsoft blocks most scripts
-from *sending* through it. We use Resend instead, which is free for 3,000 emails
-a month.
+There is no email account and no API key to set up. Delivery goes through the
+Claude Routine, which is already configured against your Claude account.
 
-1. Go to **https://resend.com** and sign up.
-   **Sign up with `dontae.blake@outlook.com`** - on the free plan without your
-   own web domain, Resend only lets you send mail to the address you registered
-   with. Using a different address here is the single most common reason this
-   step fails.
-2. In the Resend dashboard click **API Keys** -> **Create API Key**.
-3. Give it any name, choose **Sending access**, and click create.
-4. Copy the key. It starts with `re_`. You only get to see it once.
-
-### Step C - Store the key in GitHub
-
-Never paste the key into a file - anything in the repository is visible to
-anyone who can see the repository.
-
-1. In your repository, go to **Settings** -> **Secrets and variables** ->
-   **Actions**.
-2. Click **New repository secret**.
-3. Name it exactly `RESEND_API_KEY` (capital letters and underscores, no spaces).
-4. Paste the key into the value box and click **Add secret**.
-
-### Step D - Put the workflow on your default branch
+### Step C - Put the workflow on your default branch
 
 GitHub only runs scheduled jobs from a repository's **default branch**, which
 here is `master`. While this code sits on another branch you can run it by hand,
 but the daily schedule will not start until it is merged into `master`.
 
-### Step E - Test it right now
+### Step D - Test it right now
 
 1. Go to the **Actions** tab.
 2. Click **Internship digest** in the left-hand list.
-3. Click **Run workflow**. Leave "Preview only" unticked to receive a real email.
-4. Wait about a minute, then check your inbox - **including the junk folder**,
-   since this will be the first message from this sender.
+3. Click **Run workflow**. Leave "Preview only" unticked.
+4. Wait about a minute. A green tick means it worked, and a new commit called
+   "Job digest for ..." will appear in the repository.
 
-If the email arrives, you are finished. It will now run by itself every morning
-at 7am US Eastern (6am in winter).
+From then on it runs by itself: the collector at 11:00 UTC (7am US Eastern in
+summer, 6am in winter), and the notification about ninety minutes later.
 
 ---
 
@@ -173,6 +167,9 @@ separate internally.
 
 - **Actions tab** - every run is listed with a green tick or a red cross. Click
   any run to read what it did.
+- **`data/latest_digest.json`** - the result of the most recent run, which is
+  what the notification is built from. If its `date` is not today, the collector
+  did not run and the notification will say so.
 - **`data/errors.log`** - warnings and failures, kept in the repository so they
   survive after GitHub deletes old logs.
 - **`data/jobs.csv`** - should grow over time.
@@ -220,6 +217,7 @@ python3 digest.py
 | `test_digest.py` | 44 self-checks proving the tricky parts behave |
 | `data/seen.json` | Every job already reported, so you are not told twice |
 | `data/jobs.csv` | Your running spreadsheet |
+| `data/latest_digest.json` | The most recent run's result, read by the Claude Routine |
 | `data/errors.log` | Problems worth knowing about |
 
 ---
@@ -242,3 +240,26 @@ python3 digest.py
 - **The fit score is provisional.** It currently ranks on title wording, visa
   bucket, work model and location. Once your resume is added it can also match
   your actual coursework, software and project experience.
+
+---
+
+## 10. If you ever want email instead
+
+The email path is fully built and tested, it is just switched off. To use it:
+
+1. Sign up at **https://resend.com** with the address you want the mail sent to.
+   On the free plan Resend will only deliver to the address you registered with.
+2. Create an API key (**API Keys** -> **Create API Key**, sending access). It
+   starts with `re_` and is shown once.
+3. In the repository: **Settings** -> **Secrets and variables** -> **Actions**
+   -> **New repository secret**, named exactly `RESEND_API_KEY`.
+4. In `.github/workflows/internship-digest.yml`, remove `--no-email` from the
+   "Collect today's jobs" step and put the key back in that step's environment:
+
+   ```yaml
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+   ```
+
+You can run both at once if you like - the notification and the email are
+independent of each other.

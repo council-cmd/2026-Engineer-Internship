@@ -34,6 +34,7 @@ import store
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
 LOG_PATH = DATA / "errors.log"
+SUMMARY_PATH = DATA / "latest_digest.json"
 
 log = logging.getLogger("digest")
 
@@ -216,8 +217,27 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
     sheet.save()
     log.info("Saved: %d rows in the spreadsheet", len(sheet.rows))
 
+    store.write_summary(
+        SUMMARY_PATH,
+        {
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "date": today.isoformat(),
+            "status": "ok",
+            "error": "",
+            "counts": {
+                "scanned": stats["parsed"],
+                "new": stats["new_total"],
+                "kept": len(kept),
+                "excluded_on_visa": excluded,
+            },
+            "fetch_report": stats.get("fetch_report", ""),
+            "warnings": stats["warnings"],
+            "jobs": [store.summarise_job(job) for job in kept],
+        },
+    )
+
     if skip_email:
-        log.info("Email skipped (--no-email).")
+        log.info("Email skipped (--no-email). Summary written to %s", SUMMARY_PATH.name)
         return 0
 
     # --- exactly one email -------------------------------------------------
@@ -253,6 +273,25 @@ def main() -> int:
         detail = traceback.format_exc()
         log.error("Run failed: %s", exc)
         log.error(detail)
+
+        # Record the failure where the notifier will see it. Without this a
+        # crash looks identical to a quiet day.
+        try:
+            store.write_summary(
+                SUMMARY_PATH,
+                {
+                    "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                    "date": datetime.now(timezone.utc).date().isoformat(),
+                    "status": "failed",
+                    "error": f"{exc}",
+                    "counts": {},
+                    "fetch_report": "",
+                    "warnings": [],
+                    "jobs": [],
+                },
+            )
+        except Exception:  # noqa: BLE001
+            log.error("Could not write the failure summary either.")
 
         # A silent failure is the worst outcome: it looks exactly like
         # "no jobs today". Always try to raise the alarm.
