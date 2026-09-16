@@ -9,6 +9,7 @@ descriptions at all - jobs simply land in the "Unclear" visa bucket.
 
 from __future__ import annotations
 
+import collections
 import html
 import json
 import logging
@@ -66,17 +67,44 @@ class Fetcher:
         self.blocked = False
         self.block_reason = ""
         self.successes = 0
+        # Why each attempt ended, so the first real run can settle whether
+        # jobright serves descriptions to visitors who are not logged in.
+        self.outcomes: collections.Counter = collections.Counter()
 
     @property
     def exhausted(self) -> bool:
         return self.blocked or self.fetched >= self.max_pages
 
     def _note_failure(self, reason: str) -> None:
+        self.outcomes[reason] += 1
         self.consecutive_failures += 1
         if self.consecutive_failures >= self.give_up_after:
             self.blocked = True
             self.block_reason = reason
             log.warning("Giving up on job descriptions after repeated failures: %s", reason)
+
+    def report(self) -> str:
+        """One plain sentence describing how description reading went."""
+        if not self.fetched:
+            return "Job descriptions: not attempted this run."
+        detail = ", ".join(
+            f"{reason} x{count}" for reason, count in self.outcomes.most_common()
+        )
+        if self.successes == self.fetched:
+            return (
+                f"Job descriptions: read all {self.fetched} job pages successfully. "
+                "Jobright does serve descriptions without logging in."
+            )
+        if self.successes:
+            return (
+                f"Job descriptions: read {self.successes} of {self.fetched} job pages "
+                f"({detail}). Jobright is partly readable."
+            )
+        return (
+            f"Job descriptions: none of the {self.fetched} job pages could be read "
+            f"({detail}). Visa status could not be confirmed from descriptions, so "
+            "every job below is marked Unclear - check each one yourself."
+        )
 
     def fetch(self, url: str) -> tuple[str, str]:
         """Return (description_text, employer_url). Empty strings on failure."""
@@ -117,6 +145,7 @@ class Fetcher:
 
         self.consecutive_failures = 0
         self.successes += 1
+        self.outcomes["description read"] += 1
 
         employer = ""
         apply_match = APPLY_RE.search(body)

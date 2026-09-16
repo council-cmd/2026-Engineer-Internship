@@ -218,6 +218,8 @@ def build_digest(jobs: list, stats: dict, config: dict) -> tuple[str, str]:
         ]
     if hidden_roles > 0:
         text_lines.append(f"+ {hidden_roles} more role(s) in data/jobs.csv")
+    if stats.get("fetch_report"):
+        text_lines += ["", stats["fetch_report"]]
 
     return "".join(parts), "\n".join(text_lines)
 

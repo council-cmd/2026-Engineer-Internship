@@ -150,12 +150,12 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
         log.info(
             "Read %d job descriptions from %d page loads", fetcher.successes, fetcher.fetched
         )
-        if fetcher.blocked and fetcher.successes == 0:
-            stats["warnings"].append(
-                "Job descriptions could not be read from jobright.ai "
-                f"({fetcher.block_reason}), so visa status is marked "
-                '"Unclear" rather than confirmed. Check these yourself before applying.'
-            )
+        # Always report this, working or not: until it has run against the real
+        # internet nobody knows whether jobright serves descriptions anonymously.
+        stats["fetch_report"] = fetcher.report()
+        log.info(stats["fetch_report"])
+        if fetcher.successes == 0:
+            stats["warnings"].append(fetcher.report())
         elif fetcher.blocked:
             stats["warnings"].append(
                 f"Stopped reading job descriptions partway ({fetcher.block_reason}); "
