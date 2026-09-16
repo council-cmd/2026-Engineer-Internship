@@ -348,5 +348,53 @@ class TestEmailGrouping(unittest.TestCase):
         self.assertIn("could not be read", text_body)
 
 
+
+
+class TestDuplicatePostingsWithDifferentTitles(unittest.TestCase):
+    """Employers repost one role with and without a visa disclaimer.
+
+    Honeywell really did post "Manufacturing & Industrial Engineering -
+    Summer 2027 Intern" four times: twice with "(US Person Required)" and
+    twice without. Judged alone, the copies without it look open.
+    """
+
+    def _pair(self):
+        restricted = _FakeJob(
+            title="Manufacturing Intern - Summer 2027 (US Person Required)",
+            company="Honeywell", city="", state="")
+        open_looking = _FakeJob(
+            title="Manufacturing Intern - Summer 2027",
+            company="Honeywell", city="", state="")
+        for job in (restricted, open_looking):
+            job.visa_bucket, job.visa_reason = filters.classify_visa(job, RULES)
+        return restricted, open_looking
+
+    def test_alone_the_unmarked_copy_looks_fine(self):
+        restricted, open_looking = self._pair()
+        self.assertEqual(restricted.visa_bucket, filters.EXCLUDED)
+        self.assertEqual(open_looking.visa_bucket, filters.UNCLEAR)
+
+    def test_the_restriction_spreads_to_the_twin(self):
+        restricted, open_looking = self._pair()
+        spread = filters.apply_sibling_exclusions([restricted, open_looking])
+        self.assertEqual(spread, 1)
+        self.assertEqual(open_looking.visa_bucket, filters.EXCLUDED)
+        self.assertIn("identical posting", open_looking.visa_reason)
+
+    def test_unrelated_roles_are_not_dragged_down(self):
+        restricted, _ = self._pair()
+        other = _FakeJob(title="Thermal Intern", company="Honeywell", city="", state="")
+        other.visa_bucket, other.visa_reason = filters.classify_visa(other, RULES)
+        filters.apply_sibling_exclusions([restricted, other])
+        self.assertEqual(other.visa_bucket, filters.UNCLEAR)
+
+    def test_same_title_at_a_different_employer_is_untouched(self):
+        restricted, _ = self._pair()
+        elsewhere = _FakeJob(title="Manufacturing Intern - Summer 2027",
+                             company="Trane", city="", state="")
+        elsewhere.visa_bucket, elsewhere.visa_reason = filters.classify_visa(elsewhere, RULES)
+        filters.apply_sibling_exclusions([restricted, elsewhere])
+        self.assertEqual(elsewhere.visa_bucket, filters.UNCLEAR)
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

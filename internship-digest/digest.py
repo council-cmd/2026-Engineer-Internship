@@ -163,10 +163,18 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
             )
 
     # --- visa classification, scoring, saving ------------------------------
+    for job, _ in candidates:
+        job.visa_bucket, job.visa_reason = filters.classify_visa(job, rules)
+
+    # Employers repost the same role with and without "(US Person Required)".
+    # Make one copy's restriction apply to all of them.
+    spread = filters.apply_sibling_exclusions([job for job, _ in candidates])
+    if spread:
+        log.info("%d job(s) excluded because a duplicate posting restricts them", spread)
+
     kept = []
     excluded = 0
     for job, strength in candidates:
-        job.visa_bucket, job.visa_reason = filters.classify_visa(job, rules)
         if job.visa_bucket == filters.EXCLUDED:
             excluded += 1
             seen.remember(job, today)  # never show it again

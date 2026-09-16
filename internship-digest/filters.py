@@ -166,3 +166,76 @@ def score(job, rules: Rules, strength: str, today: date | None = None) -> int:
         total += s.get("posted_today", 5)
 
     return max(0, min(100, total))
+
+
+# Words that mark a note some copies of a posting carry and others omit,
+# such as "(US Person Required)".
+_QUALIFIER_WORDS = (
+    r"us persons?|u s persons?|citizens?|citizenship|clearance|itar|"
+    r"export[ -]control\w*|sponsorship|green card|onsite|on site|remote|hybrid"
+)
+
+# Only the bracketed note itself is removed - not everything that precedes
+# it - so "Intern - Summer 2027 (US Person Required)" and
+# "Intern - Summer 2027" reduce to the same text.
+_BRACKETED_QUALIFIER = re.compile(
+    rf"[\(\[][^\)\]]*\b(?:{_QUALIFIER_WORDS})\b[^\)\]]*[\)\]]?", re.IGNORECASE
+)
+
+# The same note written without brackets, at the end of the title.
+_TRAILING_QUALIFIER = re.compile(
+    rf"[\-–—,]\s*[^\-–—,\(\)\[\]]*\b(?:{_QUALIFIER_WORDS})\b"
+    r"[^\-–—,\(\)\[\]]*$",
+    re.IGNORECASE,
+)
+
+
+def base_title(title: str) -> str:
+    """Strip such notes so near-identical repostings group together.
+
+    "Manufacturing Intern (US Person Required)" and "Manufacturing Intern"
+    reduce to the same thing, while "Manufacturing Intern - Summer 2027"
+    stays distinct from "Manufacturing Intern - Summer 2028".
+    """
+    stripped = _BRACKETED_QUALIFIER.sub(" ", title or "")
+    stripped = _TRAILING_QUALIFIER.sub(" ", stripped)
+    return re.sub(r"[^a-z0-9]+", "", stripped.lower())
+
+
+def apply_sibling_exclusions(jobs: list) -> int:
+    """Carry a visa exclusion across duplicate postings of the same role.
+
+    Employers routinely post one job several times, and only some copies
+    mention "(US Person Required)". Judging each copy alone would show you
+    the copy that left the restriction out - the worst possible outcome,
+    since it looks open and is not. When any copy of a role is excluded,
+    every copy is.
+
+    Returns how many jobs this newly excluded.
+    """
+    groups: dict[tuple, list] = {}
+    for job in jobs:
+        key = (
+            re.sub(r"[^a-z0-9]+", "", job.company.lower()),
+            job.city.lower(),
+            job.state,
+            base_title(job.title),
+        )
+        groups.setdefault(key, []).append(job)
+
+    newly_excluded = 0
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        culprit = next((m for m in members if m.visa_bucket == EXCLUDED), None)
+        if culprit is None:
+            continue
+        for job in members:
+            if job.visa_bucket != EXCLUDED:
+                job.visa_bucket = EXCLUDED
+                job.visa_reason = (
+                    "An identical posting from this employer says: "
+                    f"{culprit.visa_reason}"
+                )
+                newly_excluded += 1
+    return newly_excluded
