@@ -1,10 +1,8 @@
-# Collects mechanical-engineering internships once a day and commits the
-# results back to this repository. It does NOT send anything itself: a
-# scheduled Claude Routine reads data/latest_digest.json afterwards and
-# pushes the notification to Dontae's phone.
+# Sends Dontae one mechanical-engineering internship digest per day by
+# email, and commits the results back to this repository.
 #
-# To go back to email instead, add a RESEND_API_KEY secret and drop the
-# --no-email flag below.
+# Needs a repository secret named RESEND_API_KEY. Without it the run fails
+# loudly rather than quietly sending nothing.
 #
 # IMPORTANT: GitHub only runs scheduled workflows from a repository's DEFAULT
 # branch, so this file has to be merged into the default branch before the
@@ -61,15 +59,15 @@ jobs:
         run: python test_digest.py
         working-directory: internship-digest
 
-      - name: Collect today's jobs
+      - name: Build and send the digest
         working-directory: internship-digest
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             python digest.py --dry-run
           else
-            # --no-email: delivery is handled by the Claude Routine, which
-            # reads data/latest_digest.json once this has committed it.
-            python digest.py --no-email
+            python digest.py
           fi
 
       # always() so that a failed run still commits its error log.
