@@ -27,6 +27,24 @@ email:
   max_in_email: 25
 
 
+schedule:
+  # What time you want the email, in your own local time (24-hour clock).
+  # 17 = 5pm.
+  local_hour: 17
+
+  # Your time zone. This handles daylight saving automatically, so 5pm stays
+  # 5pm all year. Other examples: America/Chicago, America/Denver,
+  # America/Los_Angeles.
+  timezone: "America/New_York"
+
+  # GitHub's scheduler only understands UTC and never adjusts for daylight
+  # saving, so the workflow starts the tool at BOTH 21:00 and 22:00 UTC.
+  # Exactly one of those is 5pm in New York on any given day; the other run
+  # notices it is the wrong hour and stops without sending anything.
+  # If you change local_hour, update the two cron lines in
+  # .github/workflows/internship-digest.yml to match.
+
+
 source:
   # The file the tool reads. Do not change unless the repo moves.
   readme_url: "https://raw.githubusercontent.com/jobright-ai/2026-Engineer-Internship/master/README.md"

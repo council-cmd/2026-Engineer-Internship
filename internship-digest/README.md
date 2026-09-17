@@ -119,8 +119,8 @@ but the daily schedule will not start until it is merged into `master`.
 4. Wait about a minute, then check your inbox - **including the junk folder**,
    since this will be the first message from this sender.
 
-If the email arrives, you are finished. It will now run by itself every morning
-at 7am US Eastern (6am in winter).
+If the email arrives, you are finished. It will now run by itself every day at
+**5pm New York time**, all year - daylight saving included.
 
 ---
 
@@ -139,6 +139,13 @@ two spaces and the dash:
 
 **Missing jobs you do want?**
 Add the word to `keep_strong:` instead.
+
+**Want the email at a different time?**
+Change `local_hour:` under `schedule:` (24-hour clock, so 8 = 8am, 20 = 8pm),
+then update the two `cron:` lines in
+`.github/workflows/internship-digest.yml` to the matching UTC hours - one for
+summer, one for winter, an hour apart. A test checks the two stay in step, so
+if you get them wrong the next run will say so rather than quietly going silent.
 
 **Want a different part of the country?**
 Edit `preferred_states:` - these only affect ranking, not what is included.
@@ -163,7 +170,19 @@ excluded - those show up as **B - Unclear** for you to judge.
 
 ---
 
-## 5. Checking more often
+## 5. About the delivery time
+
+GitHub's scheduler only understands UTC and never adjusts for daylight saving,
+so a single fixed time would drift by an hour twice a year. Instead the
+workflow starts at **both** 21:00 and 22:00 UTC. One of those is 5pm in New
+York; the other one notices it is the wrong hour and stops immediately without
+sending. You still get exactly one email a day, at the same local time all
+year.
+
+If you ever see two emails in one day, the two settings have drifted apart -
+see "Want the email at a different time?" above.
+
+## 6. Checking more often
 
 Once a day means you see about one posting in twelve. To collect more, add an
 hourly line to the schedule as shown in section 2. GitHub's free tier allows
@@ -176,7 +195,7 @@ separate internally.
 
 ---
 
-## 6. Checking that it is working
+## 7. Checking that it is working
 
 - **Actions tab** - every run is listed with a green tick or a red cross. Click
   any run to read what it did.
@@ -196,7 +215,7 @@ pause while it is working.
 
 ---
 
-## 7. Running it on your own computer instead
+## 8. Running it on your own computer instead
 
 Not required, but useful for testing. You need Python 3.9 or newer.
 
@@ -217,7 +236,7 @@ python3 digest.py
 
 ---
 
-## 8. What each file does
+## 9. What each file does
 
 | File | Purpose |
 |---|---|
@@ -236,7 +255,7 @@ python3 digest.py
 
 ---
 
-## 9. Known limits
+## 10. Known limits
 
 - **Descriptions are read in two rounds.** Jobright does serve descriptions
   without a login - confirmed by the first real run, which read 8 of 19 pages and

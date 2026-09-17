@@ -15,6 +15,7 @@ from pathlib import Path
 
 import yaml
 
+import digest as digest_module
 import enrich
 import filters
 import jobparser as jp
@@ -596,6 +597,93 @@ class TestDepartmentNamesInTitles(unittest.TestCase):
     def test_mechanical_sounding_department_does_not_rescue_software(self):
         self.assertFalse(
             filters.title_verdict("Software Engineering Intern - Robotics Division", RULES)[0])
+
+
+class TestDeliveryHour(unittest.TestCase):
+    """The email should land at the same local time all year.
+
+    GitHub schedules in UTC and ignores daylight saving, so the workflow
+    fires at both 21:00 and 22:00 UTC and the tool decides which one is
+    really 5pm in New York. Exactly one must send, every day of the year.
+    """
+
+    ZONE = "America/New_York"
+
+    def _sends_at(self, utc_hour, year, month, day, local_hour=17):
+        from datetime import datetime, timezone as dt_timezone
+        from unittest import mock
+
+        config = {"schedule": {"local_hour": local_hour, "timezone": self.ZONE}}
+        fixed = datetime(year, month, day, utc_hour, 0, tzinfo=dt_timezone.utc)
+
+        class FrozenDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return fixed.astimezone(tz) if tz else fixed
+
+        with mock.patch.object(digest_module, "datetime", FrozenDateTime):
+            sends, _ = digest_module.is_the_right_hour(config)
+        return sends
+
+    def test_exactly_one_send_per_day_across_the_year(self):
+        for year, month, day, label in [
+            (2026, 9, 17, "during daylight saving"),
+            (2026, 11, 1, "the day the clocks change"),
+            (2026, 11, 2, "the day after"),
+            (2027, 1, 15, "deep winter"),
+            (2027, 3, 14, "the day the clocks change back"),
+            (2027, 6, 1, "midsummer"),
+        ]:
+            sends = [h for h in (21, 22) if self._sends_at(h, year, month, day)]
+            self.assertEqual(
+                len(sends), 1,
+                f"{label} ({year}-{month:02d}-{day:02d}): expected one send, got {sends}",
+            )
+
+    def test_summer_sends_on_the_21_00_run(self):
+        self.assertTrue(self._sends_at(21, 2026, 9, 17))
+        self.assertFalse(self._sends_at(22, 2026, 9, 17))
+
+    def test_winter_sends_on_the_22_00_run(self):
+        self.assertFalse(self._sends_at(21, 2027, 1, 15))
+        self.assertTrue(self._sends_at(22, 2027, 1, 15))
+
+    def test_no_configured_hour_means_always_run(self):
+        sends, _ = digest_module.is_the_right_hour({})
+        self.assertTrue(sends)
+
+    def test_an_unknown_time_zone_fails_open(self):
+        """Sending twice is recoverable; sending never is not."""
+        config = {"schedule": {"local_hour": 17, "timezone": "Mars/Olympus_Mons"}}
+        sends, why = digest_module.is_the_right_hour(config)
+        self.assertTrue(sends)
+        self.assertIn("unknown time zone", why)
+
+    def test_the_configured_hour_matches_the_workflow_cron(self):
+        """If these drift apart the email silently stops arriving."""
+        import re
+        from datetime import datetime, timezone as dt_timezone
+        from zoneinfo import ZoneInfo
+
+        workflow = (Path(__file__).resolve().parents[1]
+                    / ".github/workflows/internship-digest.yml").read_text(encoding="utf-8")
+        hours = sorted(int(h) for h in re.findall(r'cron:\s*"0 (\d{1,2}) \* \* \*"', workflow))
+        self.assertEqual(len(hours), 2, "expected two scheduled runs, one per daylight-saving offset")
+
+        wanted = CONFIG["schedule"]["local_hour"]
+        zone = ZoneInfo(CONFIG["schedule"]["timezone"])
+        for month, day in ((6, 1), (1, 15)):
+            year = 2027
+            matches = [
+                h for h in hours
+                if datetime(year, month, day, h, 0, tzinfo=dt_timezone.utc)
+                .astimezone(zone).hour == wanted
+            ]
+            self.assertEqual(
+                len(matches), 1,
+                f"cron hours {hours} do not give exactly one {wanted}:00 local run "
+                f"on {year}-{month:02d}-{day:02d}",
+            )
 
 
 if __name__ == "__main__":

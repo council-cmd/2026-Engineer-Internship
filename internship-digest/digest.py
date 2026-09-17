@@ -25,6 +25,11 @@ from pathlib import Path
 import requests
 import yaml
 
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:  # Python < 3.9
+    ZoneInfo = None
+
 import enrich
 import filters
 import jobparser
@@ -60,6 +65,40 @@ def load_config() -> dict:
         return yaml.safe_load(handle)
 
 
+def is_the_right_hour(config: dict) -> tuple[bool, str]:
+    """Is it the hour you asked to be emailed at, in your own time zone?
+
+    GitHub only schedules in UTC and ignores daylight saving, so the workflow
+    fires twice and this decides which of the two is the real one. That keeps
+    the email at the same local time all year instead of drifting an hour
+    every spring and autumn.
+    """
+    schedule = config.get("schedule") or {}
+    wanted = schedule.get("local_hour")
+    if wanted is None:
+        return True, "no local hour configured"
+
+    zone_name = schedule.get("timezone", "America/New_York")
+    if ZoneInfo is None:
+        # Better to send twice than never: without time-zone support we
+        # cannot tell the two runs apart, so let both through and say so.
+        log.warning("No time zone support available; running regardless of the hour.")
+        return True, "time zone support unavailable"
+    try:
+        zone = ZoneInfo(zone_name)
+    except Exception as exc:  # noqa: BLE001 - any tz database problem
+        log.warning("Unknown time zone %r (%s); running regardless of the hour.", zone_name, exc)
+        return True, f"unknown time zone {zone_name}"
+
+    now_local = datetime.now(timezone.utc).astimezone(zone)
+    if now_local.hour == int(wanted):
+        return True, f"{now_local:%H:%M %Z} - the scheduled hour"
+    return False, (
+        f"it is {now_local:%H:%M %Z}, not {int(wanted):02d}:00 - "
+        "this is the daylight-saving twin of the real run"
+    )
+
+
 def download(url: str) -> str:
     """Fetch the README, retrying a few times on network trouble."""
     last = ""
@@ -85,8 +124,16 @@ def download(url: str) -> str:
     raise RuntimeError(f"Could not download the job list after 4 attempts. Last error: {last}")
 
 
-def run(dry_run: bool = False, skip_email: bool = False) -> int:
+def run(dry_run: bool = False, skip_email: bool = False, ignore_schedule: bool = False) -> int:
     config = load_config()
+
+    if not (dry_run or ignore_schedule):
+        right_hour, why = is_the_right_hour(config)
+        if not right_hour:
+            log.info("Stopping without sending: %s", why)
+            return 0
+        log.info("Proceeding: %s", why)
+
     today = datetime.now(timezone.utc).date()
     stats: dict = {"date": today.isoformat(), "warnings": []}
 
@@ -266,13 +313,22 @@ def main() -> int:
     parser.add_argument(
         "--no-email", action="store_true", help="save results but do not send email"
     )
+    parser.add_argument(
+        "--ignore-schedule",
+        action="store_true",
+        help="run even if it is not the hour set in config.yaml (used for manual runs)",
+    )
     parser.add_argument("--verbose", action="store_true", help="print more detail")
     args = parser.parse_args()
 
     setup_logging(args.verbose)
 
     try:
-        return run(dry_run=args.dry_run, skip_email=args.no_email)
+        return run(
+            dry_run=args.dry_run,
+            skip_email=args.no_email,
+            ignore_schedule=args.ignore_schedule,
+        )
     except Exception as exc:  # noqa: BLE001 - last line of defence
         detail = traceback.format_exc()
         log.error("Run failed: %s", exc)
