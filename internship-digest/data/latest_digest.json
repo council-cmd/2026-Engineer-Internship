@@ -1,0 +1,315 @@
+{
+ "generated_at": "2026-09-17T02:14:56+00:00",
+ "date": "2026-09-17",
+ "status": "ok",
+ "error": "",
+ "counts": {
+  "scanned": 100,
+  "new": 99,
+  "kept": 27,
+  "excluded_on_visa": 6
+ },
+ "fetch_report": "Job descriptions: read 8 of 19 job pages (no description found in page x11, description read x8). Jobright is partly readable.",
+ "warnings": [
+  "Stopped reading job descriptions partway (no description found in page); later jobs show less visa detail."
+ ],
+ "jobs": [
+  {
+   "title": "Mechanical Engineering Intern - Summer 2027",
+   "company": "Jacobs",
+   "location": "New York, NY",
+   "area_group": "Northeast",
+   "work_model": "Hybrid",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 78,
+   "url": "https://jobright.ai/jobs/info/6a992f2cf6de551aa0aae90d"
+  },
+  {
+   "title": "Mechanical Engineering Intern - Summer 2027",
+   "company": "Jacobs",
+   "location": "Conshohocken, PA",
+   "area_group": "Northeast",
+   "work_model": "Hybrid",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 78,
+   "url": "https://jobright.ai/jobs/info/6aa410978275e3a21175ebb6"
+  },
+  {
+   "title": "Mechanical Engineer Intern",
+   "company": "Brindley Engineering Corporation",
+   "location": "Lisle, IL",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 74,
+   "url": "https://jobright.ai/jobs/info/6aa9c8ac28e24cb38513c3b7"
+  },
+  {
+   "title": "Structural Engineering Intern - Global Facilities, Aerospace & Industrial (Melbourne, FL)",
+   "company": "Burns & McDonnell",
+   "location": "Melbourne, FL",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 66,
+   "url": "https://jobright.ai/jobs/info/6aab1e008e1bf0f764af89ca"
+  },
+  {
+   "title": "Summer/Co-op Engineer",
+   "company": "MPR Associates, Inc.",
+   "location": "Alexandria, VA",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 60,
+   "url": "https://jobright.ai/jobs/info/6a738ba28dc3d52d8eda012b"
+  },
+  {
+   "title": "Operational Excellence Engineering Intern (Summer 2027)",
+   "company": "Schreiber Foods",
+   "location": "Logan, UT",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 60,
+   "url": "https://jobright.ai/jobs/info/6aaae4544be87a72913a1fc1"
+  },
+  {
+   "title": "Test Engineering Intern",
+   "company": "Canyon AeroConnect",
+   "location": "Prescott, AZ",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1dd2c85610f4a4843b59"
+  },
+  {
+   "title": "Mechanical Engineering Co-op (Summer 2027)",
+   "company": "Emerson",
+   "location": "Elyria, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab025ef6bd9d2d17c1ae68"
+  },
+  {
+   "title": "Mechanical Engineering Intern - ELE- Summer 2027",
+   "company": "Jacobs",
+   "location": "Pittsburgh, PA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1ab740807b73bd393e87"
+  },
+  {
+   "title": "Manufacturing Engineering Internship",
+   "company": "Keytronic",
+   "location": "Spokane, WA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1bd840807b73bd393f27"
+  },
+  {
+   "title": "R&D Engineering Intern, Interventional",
+   "company": "Teleflex",
+   "location": "Maple Grove, MN",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aaaff3840807b73bd393337"
+  },
+  {
+   "title": "Internship, Electronic Design Engineer, Energy Engineering (Winter/Spring 2027)",
+   "company": "Tesla",
+   "location": "Palo Alto, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1eeb8e1bf0f764af89f8"
+  },
+  {
+   "title": "Internship, Mechanical Design Engineer, Enclosures, Energy Engineering (Winter/Spring 2027)",
+   "company": "Tesla",
+   "location": "Palo Alto, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1f5c76707040fb084524"
+  },
+  {
+   "title": "Internship, Thermal Engineer, Energy Engineering (Winter/Spring 2027)",
+   "company": "Tesla",
+   "location": "Palo Alto, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 56,
+   "url": "https://jobright.ai/jobs/info/6aab1ef74be87a72913a36bf"
+  },
+  {
+   "title": "Engineering Intern",
+   "company": "Sulzer",
+   "location": "Portland, OR",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 52,
+   "url": "https://jobright.ai/jobs/info/6aab228e8e1bf0f764af8afb"
+  },
+  {
+   "title": "Continuous Improvement Engineering Co-op (Spring 2027)",
+   "company": "SPX FLOW, now ITT Flow Technologies",
+   "location": "United States",
+   "area_group": "Unknown",
+   "work_model": "Remote",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 48,
+   "url": "https://jobright.ai/jobs/info/6a7cdce9a346cb6c8d5f0845"
+  },
+  {
+   "title": "Automation & Analytics Intern (Year-Round)",
+   "company": "Charter Steel",
+   "location": "Milwaukee, WI",
+   "area_group": "Midwest",
+   "work_model": "Hybrid",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 46,
+   "url": "https://jobright.ai/jobs/info/6aab039bf6bd9d2d17c1af2c"
+  },
+  {
+   "title": "Systems Engineering Intern",
+   "company": "Astronautics Corporation of America",
+   "location": "Oak Creek, WI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab04528e1bf0f764af7f33"
+  },
+  {
+   "title": "Summer 2027 Engineering Internship - Baltimore, MD",
+   "company": "Constellation",
+   "location": "Baltimore, MD",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aaafa93f6bd9d2d17c1ab0c"
+  },
+  {
+   "title": "Summer 2027 Technical Engineering Internship - Ontario, NY (ASSOCIATE'S DEGREE ONLY)",
+   "company": "Constellation",
+   "location": "Ontario, NY",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aaadd434be87a72913a1d83"
+  },
+  {
+   "title": "College Project Engineer Internship (Indianapolis, Summer 2027)",
+   "company": "Gaylor Electric, Inc.",
+   "location": "Indianapolis, IN",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aaaf6dd76707040fb0834df"
+  },
+  {
+   "title": "Project Engineer Intern – Summer 2027 (Folsom, CA)",
+   "company": "Goodfellow Bros.",
+   "location": "Folsom, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab1960c85610f4a484394d"
+  },
+  {
+   "title": "Project Engineer Intern – Summer 2027 (Reno, NV)",
+   "company": "Goodfellow Bros.",
+   "location": "Reno, NV",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab191040807b73bd393d86"
+  },
+  {
+   "title": "2027 Spring Engineering Co-Op",
+   "company": "Greif",
+   "location": "Tacoma, WA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab001c76707040fb08386e"
+  },
+  {
+   "title": "RF Engineering Intern (Spring 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab20034be87a72913a371c"
+  },
+  {
+   "title": "Co-op, Sterilization and Microbiology: January - June 2027 (Onsite)",
+   "company": "Insulet Corporation",
+   "location": "Acton, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab01594be87a72913a2ade"
+  },
+  {
+   "title": "Cost Engineering Intern",
+   "company": "Stadler",
+   "location": "Salt Lake City, UT",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 42,
+   "url": "https://jobright.ai/jobs/info/6aab1d4d8e1bf0f764af8970"
+  }
+ ]
+}
