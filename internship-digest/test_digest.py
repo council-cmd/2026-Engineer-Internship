@@ -7,6 +7,7 @@ you should not trust that day's email until it is fixed.
 """
 
 import csv
+import json
 import tempfile
 import unittest
 from datetime import date
@@ -14,6 +15,8 @@ from pathlib import Path
 
 import yaml
 
+import digest as digest_module
+import enrich
 import filters
 import jobparser as jp
 import mailer
@@ -395,6 +398,293 @@ class TestDuplicatePostingsWithDifferentTitles(unittest.TestCase):
         elsewhere.visa_bucket, elsewhere.visa_reason = filters.classify_visa(elsewhere, RULES)
         filters.apply_sibling_exclusions([restricted, elsewhere])
         self.assertEqual(elsewhere.visa_bucket, filters.UNCLEAR)
+
+
+JD_TEXT = (
+    "About the role. Responsibilities include mechanical design and testing. "
+    "Qualifications: pursuing a BS in Mechanical Engineering. " + "Detail. " * 40
+)
+
+
+def json_ld_page(description=JD_TEXT, apply_url=None):
+    node = {"@type": "JobPosting", "title": "Mechanical Intern", "description": description}
+    if apply_url:
+        node["applyUrl"] = apply_url
+    return f'<html><script type="application/ld+json">{json.dumps(node)}</script></html>'
+
+
+class TestDescriptionExtraction(unittest.TestCase):
+    def test_json_ld(self):
+        self.assertIn("Responsibilities", enrich.extract_description(json_ld_page()))
+
+    def test_json_ld_inside_graph(self):
+        doc = {"@graph": [{"@type": "JobPosting", "description": JD_TEXT}]}
+        page = f'<script type="application/ld+json">{json.dumps(doc)}</script>'
+        self.assertIn("Responsibilities", enrich.extract_description(page))
+
+    def test_next_data(self):
+        blob = {"props": {"pageProps": {"job": {"jobDescription": JD_TEXT}}}}
+        page = f'<script id="__NEXT_DATA__" type="application/json">{json.dumps(blob)}</script>'
+        self.assertIn("Responsibilities", enrich.extract_description(page))
+
+    def test_next_app_router_streamed_chunks(self):
+        """Newer Next.js sites stream page data instead of embedding it."""
+        payload = json.dumps({"description": JD_TEXT})[1:-1]
+        chunk = json.dumps(payload)[1:-1]
+        page = f'<script>self.__next_f.push([1,"{chunk}"])</script>'
+        self.assertIn("Responsibilities", enrich.extract_description(page))
+
+    def test_rejects_short_text(self):
+        self.assertEqual(enrich.extract_description("<html><p>Apply now</p></html>"), "")
+
+    def test_visible_text_needs_to_look_like_a_job_description(self):
+        """A page of navigation and cookie banners must never be treated as a
+        description, or visa status would be judged from noise."""
+        noise = "<html><body>" + ("Cookies. Privacy. Menu. Home. " * 40) + "</body></html>"
+        self.assertEqual(enrich.extract_description(noise), "")
+
+    def test_visible_text_accepted_when_it_does(self):
+        page = "<html><body>" + JD_TEXT + "</body></html>"
+        self.assertIn("Responsibilities", enrich.extract_description(page))
+
+
+class TestEmployerLink(unittest.TestCase):
+    def test_from_json_ld_apply_url(self):
+        page = json_ld_page(apply_url="https://careers.acme.com/jobs/123")
+        self.assertEqual(enrich.extract_employer_url(page), "https://careers.acme.com/jobs/123")
+
+    def test_from_embedded_key(self):
+        page = '<script>{"applyLink":"https://boards.greenhouse.io/acme/jobs/7"}</script>'
+        self.assertEqual(enrich.extract_employer_url(page), "https://boards.greenhouse.io/acme/jobs/7")
+
+    def test_other_aggregators_are_not_followed(self):
+        """Following LinkedIn or Indeed just moves the problem sideways."""
+        page = '<script>{"applyUrl":"https://www.linkedin.com/jobs/view/123"}</script>'
+        self.assertEqual(enrich.extract_employer_url(page), "")
+
+    def test_jobright_itself_is_not_followed(self):
+        page = '<script>{"applyUrl":"https://jobright.ai/jobs/info/abc"}</script>'
+        self.assertEqual(enrich.extract_employer_url(page), "")
+
+
+class _FakeResponse:
+    def __init__(self, text="", status_code=200):
+        self.text, self.status_code = text, status_code
+
+
+class _FakeSession:
+    """Stands in for the network so the two rounds can be tested offline."""
+
+    def __init__(self, pages):
+        self.pages = pages
+        self.requested = []
+        self.headers = {}
+
+    def get(self, url, **kwargs):
+        self.requested.append(url)
+        page = self.pages.get(url)
+        if page is None:
+            return _FakeResponse("<html><body>nothing here</body></html>", 200)
+        if isinstance(page, int):
+            return _FakeResponse("", page)
+        return _FakeResponse(page, 200)
+
+
+def fetcher_with(pages, **kwargs):
+    f = enrich.Fetcher(delay=0, max_pages=kwargs.pop("max_pages", 50),
+                       give_up_after=kwargs.pop("give_up_after", 8), **kwargs)
+    f.session = _FakeSession(pages)
+    return f
+
+
+class TestTwoRounds(unittest.TestCase):
+    def test_round_one_is_enough_when_jobright_has_the_text(self):
+        pages = {"https://jobright.ai/jobs/info/a": json_ld_page()}
+        f = fetcher_with(pages)
+        description, _ = f.fetch("https://jobright.ai/jobs/info/a")
+        self.assertIn("Responsibilities", description)
+        self.assertEqual(f.employer_fetched, 0, "should not have needed the employer site")
+
+    def test_round_two_rescues_a_page_with_no_description(self):
+        """The case from the first production run: the page loads but holds
+        nothing readable, so the employer's own posting is used."""
+        employer = "https://careers.acme.com/jobs/1"
+        pages = {
+            "https://jobright.ai/jobs/info/b":
+                f'<html><script>{{"applyUrl":"{employer}"}}</script></html>',
+            employer: json_ld_page(),
+        }
+        f = fetcher_with(pages)
+        description, employer_url = f.fetch("https://jobright.ai/jobs/info/b")
+        self.assertIn("Responsibilities", description)
+        self.assertEqual(employer_url, employer)
+        self.assertEqual(f.from_employer, 1)
+
+    def test_unparseable_pages_do_not_stop_the_run(self):
+        """The bug that cut the first real run short: eleven pages with no
+        description made it give up at 19 of 27 jobs, even though jobright
+        was still serving pages perfectly well."""
+        pages = {f"https://jobright.ai/jobs/info/{i}": "<html><body>hi</body></html>"
+                 for i in range(12)}
+        pages["https://jobright.ai/jobs/info/12"] = json_ld_page()
+        f = fetcher_with(pages, give_up_after=8)
+        for i in range(12):
+            f.fetch(f"https://jobright.ai/jobs/info/{i}")
+        self.assertFalse(f.blocked, "unreadable pages must not count as being blocked")
+        description, _ = f.fetch("https://jobright.ai/jobs/info/12")
+        self.assertIn("Responsibilities", description)
+
+    def test_real_blocks_still_stop_the_run(self):
+        pages = {f"https://jobright.ai/jobs/info/{i}": 403 for i in range(10)}
+        f = fetcher_with(pages, give_up_after=3)
+        for i in range(10):
+            f.fetch(f"https://jobright.ai/jobs/info/{i}")
+        self.assertTrue(f.blocked)
+        self.assertIn("403", f.block_reason)
+
+    def test_a_block_counter_resets_after_a_success(self):
+        pages = {"https://jobright.ai/jobs/info/x": 403,
+                 "https://jobright.ai/jobs/info/y": json_ld_page(),
+                 "https://jobright.ai/jobs/info/z": 403}
+        f = fetcher_with(pages, give_up_after=2)
+        for tail in ("x", "y", "z"):
+            f.fetch(f"https://jobright.ai/jobs/info/{tail}")
+        self.assertFalse(f.blocked)
+
+    def test_employer_budget_is_respected(self):
+        employer = "https://careers.acme.com/jobs/1"
+        pages = {f"https://jobright.ai/jobs/info/{i}":
+                 f'<html><script>{{"applyUrl":"{employer}"}}</script></html>'
+                 for i in range(5)}
+        f = fetcher_with(pages, max_employer_pages=2)
+        for i in range(5):
+            f.fetch(f"https://jobright.ai/jobs/info/{i}")
+        self.assertLessEqual(f.employer_fetched, 2)
+
+    def test_report_mentions_the_employer_site(self):
+        employer = "https://careers.acme.com/jobs/1"
+        pages = {"https://jobright.ai/jobs/info/c":
+                 f'<html><script>{{"applyUrl":"{employer}"}}</script></html>',
+                 employer: json_ld_page()}
+        f = fetcher_with(pages)
+        f.fetch("https://jobright.ai/jobs/info/c")
+        self.assertIn("employer", f.report())
+
+    def test_diagnostics_record_unresolved_jobs(self):
+        pages = {"https://jobright.ai/jobs/info/d": "<html><body>hi</body></html>"}
+        f = fetcher_with(pages)
+        f.fetch("https://jobright.ai/jobs/info/d")
+        diag = f.diagnostics()
+        self.assertEqual(diag["descriptions_read"], 0)
+        self.assertEqual(len(diag["unresolved_samples"]), 1)
+
+
+class TestDepartmentNamesInTitles(unittest.TestCase):
+    """From the first real digest: a structural engineering job was kept
+    because its department was called "Aerospace & Industrial"."""
+
+    def test_department_does_not_rescue_another_discipline(self):
+        title = "Structural Engineering Intern - Global Facilities, Aerospace & Industrial"
+        self.assertFalse(filters.title_verdict(title, RULES)[0])
+
+    def test_genuine_mechanical_roles_still_pass(self):
+        for title in ["Mechanical Engineering Intern - Summer 2027",
+                      "Aerospace Engineering Intern",
+                      "Thermal Systems Intern, Aerospace",
+                      "Mechanical/Electrical Engineering Intern"]:
+            self.assertTrue(filters.title_verdict(title, RULES)[0], title)
+
+    def test_mechanical_sounding_department_does_not_rescue_software(self):
+        self.assertFalse(
+            filters.title_verdict("Software Engineering Intern - Robotics Division", RULES)[0])
+
+
+class TestDeliveryHour(unittest.TestCase):
+    """The email should land at the same local time all year.
+
+    GitHub schedules in UTC and ignores daylight saving, so the workflow
+    fires at both 21:00 and 22:00 UTC and the tool decides which one is
+    really 5pm in New York. Exactly one must send, every day of the year.
+    """
+
+    ZONE = "America/New_York"
+
+    def _sends_at(self, utc_hour, year, month, day, local_hour=17):
+        from datetime import datetime, timezone as dt_timezone
+        from unittest import mock
+
+        config = {"schedule": {"local_hour": local_hour, "timezone": self.ZONE}}
+        fixed = datetime(year, month, day, utc_hour, 0, tzinfo=dt_timezone.utc)
+
+        class FrozenDateTime(datetime):
+            @classmethod
+            def now(cls, tz=None):
+                return fixed.astimezone(tz) if tz else fixed
+
+        with mock.patch.object(digest_module, "datetime", FrozenDateTime):
+            sends, _ = digest_module.is_the_right_hour(config)
+        return sends
+
+    def test_exactly_one_send_per_day_across_the_year(self):
+        for year, month, day, label in [
+            (2026, 9, 17, "during daylight saving"),
+            (2026, 11, 1, "the day the clocks change"),
+            (2026, 11, 2, "the day after"),
+            (2027, 1, 15, "deep winter"),
+            (2027, 3, 14, "the day the clocks change back"),
+            (2027, 6, 1, "midsummer"),
+        ]:
+            sends = [h for h in (21, 22) if self._sends_at(h, year, month, day)]
+            self.assertEqual(
+                len(sends), 1,
+                f"{label} ({year}-{month:02d}-{day:02d}): expected one send, got {sends}",
+            )
+
+    def test_summer_sends_on_the_21_00_run(self):
+        self.assertTrue(self._sends_at(21, 2026, 9, 17))
+        self.assertFalse(self._sends_at(22, 2026, 9, 17))
+
+    def test_winter_sends_on_the_22_00_run(self):
+        self.assertFalse(self._sends_at(21, 2027, 1, 15))
+        self.assertTrue(self._sends_at(22, 2027, 1, 15))
+
+    def test_no_configured_hour_means_always_run(self):
+        sends, _ = digest_module.is_the_right_hour({})
+        self.assertTrue(sends)
+
+    def test_an_unknown_time_zone_fails_open(self):
+        """Sending twice is recoverable; sending never is not."""
+        config = {"schedule": {"local_hour": 17, "timezone": "Mars/Olympus_Mons"}}
+        sends, why = digest_module.is_the_right_hour(config)
+        self.assertTrue(sends)
+        self.assertIn("unknown time zone", why)
+
+    def test_the_configured_hour_matches_the_workflow_cron(self):
+        """If these drift apart the email silently stops arriving."""
+        import re
+        from datetime import datetime, timezone as dt_timezone
+        from zoneinfo import ZoneInfo
+
+        workflow = (Path(__file__).resolve().parents[1]
+                    / ".github/workflows/internship-digest.yml").read_text(encoding="utf-8")
+        hours = sorted(int(h) for h in re.findall(r'cron:\s*"0 (\d{1,2}) \* \* \*"', workflow))
+        self.assertEqual(len(hours), 2, "expected two scheduled runs, one per daylight-saving offset")
+
+        wanted = CONFIG["schedule"]["local_hour"]
+        zone = ZoneInfo(CONFIG["schedule"]["timezone"])
+        for month, day in ((6, 1), (1, 15)):
+            year = 2027
+            matches = [
+                h for h in hours
+                if datetime(year, month, day, h, 0, tzinfo=dt_timezone.utc)
+                .astimezone(zone).hour == wanted
+            ]
+            self.assertEqual(
+                len(matches), 1,
+                f"cron hours {hours} do not give exactly one {wanted}:00 local run "
+                f"on {year}-{month:02d}-{day:02d}",
+            )
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

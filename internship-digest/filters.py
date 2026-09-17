@@ -87,15 +87,25 @@ def title_verdict(title: str, rules: Rules) -> tuple[bool, str]:
         if pattern.search(text):
             return False, "no"
 
-    strong = any(p.search(text) for p in rules.keep_strong)
-    if strong:
-        # Strong mechanical terms win even when another discipline is named,
-        # so "Mechanical/Electrical Engineering Intern" is still shown.
+    # A strong mechanical term overrides a competing discipline only when it
+    # appears in the role name itself - the part before the first dash,
+    # comma or bracket. Otherwise "Structural Engineering Intern - Global
+    # Facilities, Aerospace & Industrial" would be kept on the strength of
+    # "Aerospace", which there is a business unit, not the job.
+    head = re.split(r"\s[-–—]\s|,|\(|\||/{2}", title or "", maxsplit=1)[0]
+    head_text = normalize_text(head)
+
+    strong_in_head = any(p.search(head_text) for p in rules.keep_strong)
+    if strong_in_head:
         return True, "strong"
 
     for pattern in rules.drop:
         if pattern.search(text):
             return False, "no"
+
+    # No competing discipline named, so a strong term anywhere still counts.
+    if any(p.search(text) for p in rules.keep_strong):
+        return True, "strong"
 
     if any(p.search(text) for p in rules.keep_moderate):
         # A bare "Engineering Intern" with no discipline named is worth less

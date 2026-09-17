@@ -27,6 +27,24 @@ email:
   max_in_email: 25
 
 
+schedule:
+  # What time you want the email, in your own local time (24-hour clock).
+  # 17 = 5pm.
+  local_hour: 17
+
+  # Your time zone. This handles daylight saving automatically, so 5pm stays
+  # 5pm all year. Other examples: America/Chicago, America/Denver,
+  # America/Los_Angeles.
+  timezone: "America/New_York"
+
+  # GitHub's scheduler only understands UTC and never adjusts for daylight
+  # saving, so the workflow starts the tool at BOTH 21:00 and 22:00 UTC.
+  # Exactly one of those is 5pm in New York on any given day; the other run
+  # notices it is the wrong hour and stops without sending anything.
+  # If you change local_hour, update the two cron lines in
+  # .github/workflows/internship-digest.yml to match.
+
+
 source:
   # The file the tool reads. Do not change unless the repo moves.
   readme_url: "https://raw.githubusercontent.com/jobright-ai/2026-Engineer-Internship/master/README.md"
@@ -45,8 +63,20 @@ jobright:
   # Never open more than this many job pages in one run (keeps runs short).
   max_pages_per_run: 60
 
-  # If this many fetches fail in a row, assume we are blocked and stop trying.
+  # If this many requests in a row are REFUSED (HTTP 403/429, or the site is
+  # unreachable), assume we are blocked and stop. Pages that load fine but
+  # contain no readable description do NOT count towards this - those are
+  # normal, and the next job usually works.
   give_up_after_failures: 8
+
+  # Round two: when jobright has no readable description, follow its link to
+  # the employer's own job posting and read that instead. Employer sites and
+  # recruiting systems publish fuller, more reliable text, especially about
+  # visa sponsorship. Set to false to use jobright only.
+  follow_employer_sites: true
+
+  # Never open more than this many employer pages in one run.
+  max_employer_pages_per_run: 40
 
 
 location:

@@ -13,9 +13,17 @@ name: Internship digest
 
 on:
   schedule:
-    # 11:00 UTC = 7am US Eastern in summer, 6am in winter.
-    # To check more often, add another line, e.g. hourly: - cron: "0 * * * *"
-    - cron: "0 11 * * *"
+    # Target: 5pm in New York, every day, all year.
+    #
+    # GitHub schedules in UTC only and never adjusts for daylight saving, so
+    # we start at BOTH times and let the tool decide which one is really 5pm:
+    - cron: "0 21 * * *"    # 5pm Eastern Daylight Time  (Mar-Nov)
+    - cron: "0 22 * * *"    # 5pm Eastern Standard Time  (Nov-Mar)
+    #
+    # The run that is not 5pm locally stops immediately without sending, so
+    # you still get exactly one email a day. The hour itself is set by
+    # `schedule.local_hour` in internship-digest/config.yaml - change both
+    # places if you want a different time.
   workflow_dispatch:        # the "Run workflow" button, for testing
     inputs:
       dry_run:
@@ -66,6 +74,9 @@ jobs:
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             python digest.py --dry-run
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # You pressed the button, so send regardless of the clock.
+            python digest.py --ignore-schedule
           else
             python digest.py
           fi
