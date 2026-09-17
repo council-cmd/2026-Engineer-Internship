@@ -147,6 +147,10 @@ Edit `preferred_states:` - these only affect ranking, not what is included.
 Change `max_in_email:` from 25 to a smaller number. Everything still lands in
 the spreadsheet.
 
+**Don't want the tool visiting employer websites?**
+Set `follow_employer_sites: false` under `jobright:`. You will get fewer
+confirmed visa answers and more "B - Unclear".
+
 **Want to see the excluded jobs after all?**
 Set `include_unclear: false` to hide uncertain ones, or remove a company from
 `exclude_companies:` if you think it is wrong.
@@ -177,7 +181,9 @@ separate internally.
 - **Actions tab** - every run is listed with a green tick or a red cross. Click
   any run to read what it did.
 - **`data/latest_digest.json`** - a machine-readable record of the most recent
-  run. If its `date` is not today, the tool did not run.
+  run. If its `date` is not today, the tool did not run. Its `fetch_diagnostics`
+  section records which job pages could not be read and why, which is what to
+  share if descriptions stop working.
 - **`data/errors.log`** - warnings and failures, kept in the repository so they
   survive after GitHub deletes old logs.
 - **`data/jobs.csv`** - should grow over time.
@@ -232,12 +238,18 @@ python3 digest.py
 
 ## 9. Known limits
 
-- **Job descriptions may not be readable.** It could not be verified from the
-  build environment whether jobright.ai shows descriptions to visitors who are
-  not logged in. The tool tries, and carries on without them if not - jobs simply
-  stay in bucket **B**. The email tells you which mode the run was in. If they
-  turn out to be unreadable, say so and the tool can be pointed at employer
-  career pages instead.
+- **Descriptions are read in two rounds.** Jobright does serve descriptions
+  without a login - confirmed by the first real run, which read 8 of 19 pages and
+  correctly found "H-1B" in several. The other 11 pages loaded but contained
+  nothing readable, so the tool now follows the link on the jobright page
+  through to the employer's own posting and reads that instead. Employer sites
+  and recruiting systems publish fuller, more reliable text, particularly about
+  sponsorship.
+
+  Where jobright gives no onward link, there is nothing to follow and the job
+  stays in bucket **B**. Searching a company's careers site blind for the right
+  posting is not reliable enough to trust for a visa decision, so the tool does
+  not guess.
 - **Visa classification reads words, it does not reason.** A posting that
   mentions sponsorship only in a PDF, or an interview, will be misfiled. Bucket
   **A** means "nothing found that excludes you", never a guarantee.

@@ -45,8 +45,20 @@ jobright:
   # Never open more than this many job pages in one run (keeps runs short).
   max_pages_per_run: 60
 
-  # If this many fetches fail in a row, assume we are blocked and stop trying.
+  # If this many requests in a row are REFUSED (HTTP 403/429, or the site is
+  # unreachable), assume we are blocked and stop. Pages that load fine but
+  # contain no readable description do NOT count towards this - those are
+  # normal, and the next job usually works.
   give_up_after_failures: 8
+
+  # Round two: when jobright has no readable description, follow its link to
+  # the employer's own job posting and read that instead. Employer sites and
+  # recruiting systems publish fuller, more reliable text, especially about
+  # visa sponsorship. Set to false to use jobright only.
+  follow_employer_sites: true
+
+  # Never open more than this many employer pages in one run.
+  max_employer_pages_per_run: 40
 
 
 location:

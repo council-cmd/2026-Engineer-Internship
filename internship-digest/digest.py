@@ -141,6 +141,8 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
             delay=config["jobright"].get("delay_seconds", 3.0),
             max_pages=config["jobright"].get("max_pages_per_run", 60),
             give_up_after=config["jobright"].get("give_up_after_failures", 8),
+            follow_employer=config["jobright"].get("follow_employer_sites", True),
+            max_employer_pages=config["jobright"].get("max_employer_pages_per_run", 40),
         )
         for job, _ in candidates:
             if fetcher.exhausted:
@@ -154,6 +156,7 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
         # Always report this, working or not: until it has run against the real
         # internet nobody knows whether jobright serves descriptions anonymously.
         stats["fetch_report"] = fetcher.report()
+        stats["fetch_diagnostics"] = fetcher.diagnostics()
         log.info(stats["fetch_report"])
         if fetcher.successes == 0:
             stats["warnings"].append(fetcher.report())
@@ -231,6 +234,7 @@ def run(dry_run: bool = False, skip_email: bool = False) -> int:
                 "excluded_on_visa": excluded,
             },
             "fetch_report": stats.get("fetch_report", ""),
+            "fetch_diagnostics": stats.get("fetch_diagnostics", {}),
             "warnings": stats["warnings"],
             "jobs": [store.summarise_job(job) for job in kept],
         },
