@@ -1,78 +1,78 @@
 {
- "generated_at": "2026-09-25T21:13:13+00:00",
- "date": "2026-09-25",
+ "generated_at": "2026-09-26T21:13:49+00:00",
+ "date": "2026-09-26",
  "status": "ok",
  "error": "",
  "counts": {
   "scanned": 100,
-  "new": 86,
-  "kept": 21,
-  "excluded_on_visa": 3
+  "new": 93,
+  "kept": 40,
+  "excluded_on_visa": 2
  },
- "fetch_report": "Job descriptions: read 13 of 24 job pages (description read x13, jobright: no description in page x11).",
+ "fetch_report": "Job descriptions: read 22 of 42 job pages (description read x22, jobright: no description in page x20).",
  "fetch_diagnostics": {
-  "jobright_pages": 24,
+  "jobright_pages": 42,
   "employer_pages": 0,
-  "descriptions_read": 13,
+  "descriptions_read": 22,
   "from_employer_site": 0,
   "outcomes": {
-   "description read": 13,
-   "jobright: no description in page": 11
+   "description read": 22,
+   "jobright: no description in page": 20
   },
   "blocked": false,
   "block_reason": "",
   "unresolved_samples": [
    {
-    "url": "https://jobright.ai/jobs/info/6ab6bbd4b3db59402d102142",
+    "url": "https://jobright.ai/jobs/info/6a9b04191388387060596323",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a99f0be551435518ebf2239",
+    "url": "https://jobright.ai/jobs/info/6a9b6d4e90a313642c65a048",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a99f073551435518ebf220e",
+    "url": "https://jobright.ai/jobs/info/6ab80179ba1c25652c612afd",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ab6a6fb9d4843569fe4e9ff",
+    "url": "https://jobright.ai/jobs/info/6a9b19cffe45b8490f606d81",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a908db40bd89e205d24af61",
+    "url": "https://jobright.ai/jobs/info/6a9af8f41388387060595ac6",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a9a799c90a313642c6558fb",
+    "url": "https://jobright.ai/jobs/info/6a9b2ec31388387060597047",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ab6716fc6fe0dec811a4c37",
+    "url": "https://jobright.ai/jobs/info/6a9b2ebe90a313642c658f7a",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ab6ba1d634ec6aa7c0d43ef",
+    "url": "https://jobright.ai/jobs/info/6a9a4295a33d28569fb99860",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
@@ -83,235 +83,444 @@
  "warnings": [],
  "jobs": [
   {
-   "title": "Mechanical Design Intern",
-   "company": "DBR",
-   "location": "Houston, TX",
-   "area_group": "Southwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6a919a21d18f756748278e1e"
-  },
-  {
-   "title": "Transmission Line Engineer Intern - Grid (Summer 2027)",
-   "company": "Sargent & Lundy",
-   "location": "Charlotte, NC",
-   "area_group": "Southeast",
-   "work_model": "Hybrid",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6a99f0b390a313642c653ab6"
-  },
-  {
-   "title": "Substation Engineer Intern - Grid (Summer 2027)",
-   "company": "Sargent & Lundy",
-   "location": "Charlotte, NC",
-   "area_group": "Southeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 75,
-   "url": "https://jobright.ai/jobs/info/6a99f06e1388387060591799"
-  },
-  {
-   "title": "Substation Engineer Intern - Grid (Summer 2027)",
-   "company": "Sargent & Lundy",
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
    "location": "Atlanta, GA",
    "area_group": "Southeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 75,
-   "url": "https://jobright.ai/jobs/info/6a99f085040e5c3d07599c7a"
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 87,
+   "url": "https://jobright.ai/jobs/info/6aa5edfe42411952ff9aa8f8"
   },
   {
-   "title": "Automation Intern",
-   "company": "VT Industries",
-   "location": "Rome, GA",
-   "area_group": "Southeast",
+   "title": "Product Engineer Intern",
+   "company": "Direct Supply",
+   "location": "Milwaukee, WI",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 75,
-   "url": "https://jobright.ai/jobs/info/6ab6be27d85922de20ce6984"
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aadc8b0de327d3e210d468d"
   },
   {
-   "title": "Controls Engineering Intern",
-   "company": "CONVERGIX Automation Solutions",
-   "location": "Fayetteville, AR",
+   "title": "Mechanical Engineering Intern - Summer 2027",
+   "company": "WSP",
+   "location": "Milwaukee, WI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6a9b1ff11388387060596b6f"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Garfield Heights, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6ab801e8ba1c25652c612b08"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Shoreview, MN",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aaac6a476707040fb082206"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Kansas City, MO",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aa8cbec17ddad6a8a47d4b0"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Laurel, MD",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aa38263626f9945308b11be"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Rolling Meadows, IL",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aaac6338e1bf0f764af655c"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Baltimore, MD",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aa1dfc9500b01124c77f78e"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Milwaukee, WI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aaac6528e1bf0f764af6569"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Milford, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 77,
+   "url": "https://jobright.ai/jobs/info/6aa3b119c5a856ac7e33afce"
+  },
+  {
+   "title": "Mechanical Engineering Internship - Summer 2027 (Paid)",
+   "company": "CSX",
+   "location": "Jacksonville, FL",
    "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 71,
+   "url": "https://jobright.ai/jobs/info/6a9b04191388387060596323"
+  },
+  {
+   "title": "Information Data Steward Co-op Spring 2027",
+   "company": "Crown Equipment Corporation",
+   "location": "New Bremen, OH",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ab6bdbbd85922de20ce6932"
+   "url": "https://jobright.ai/jobs/info/6a9af8f89c24314c35f96da1"
   },
   {
-   "title": "R&D Intern (2027)",
-   "company": "Hollister Incorporated",
-   "location": "Libertyville, IL",
+   "title": "Research and Development Intern",
+   "company": "Ecolab",
+   "location": "Eagan, MN",
    "area_group": "Midwest",
    "work_model": "Hybrid",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ab6716fc6fe0dec811a4c37"
+   "url": "https://jobright.ai/jobs/info/6a9af8f41388387060595ac6"
   },
   {
-   "title": "Field/Office Engineer Internship - Southern California District (Summer 2027)",
-   "company": "Kiewit",
-   "location": "Los Angeles, CA",
+   "title": "AI Applications Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a9b2f289c24314c35f982bb"
+  },
+  {
+   "title": "Asset Reservoir Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a9b2ed7d5ff1f3f1c39e077"
+  },
+  {
+   "title": "Commissioning Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Milford, UT",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ab6bf8f4873fd3fd852f0ad"
+   "url": "https://jobright.ai/jobs/info/6a9b197afe45b8490f606d55"
   },
   {
-   "title": "Alloy Process Engineering Co-Op - Summer 2027",
-   "company": "Precision Castparts",
-   "location": "Mentor, OH",
-   "area_group": "Midwest",
+   "title": "Internship - Embedded Systems EngineerInternship - Embedded Systems Engineer",
+   "company": "Infineon Technologies",
+   "location": "Austin, TX",
+   "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ab6bbd6634ec6aa7c0d448c"
+   "url": "https://jobright.ai/jobs/info/6a863807e459fa3baa866d31"
   },
   {
-   "title": "Vertex Spring Co-Op 2027, Process Development",
-   "company": "Vertex Pharmaceuticals",
-   "location": "Boston, MA",
+   "title": "Field/Office Engineer Intern - Eastern District (Summer 2027)",
+   "company": "Kiewit",
+   "location": "Woodcliff Lake, NJ",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a74ef2037da8525e8cdb70c"
+  },
+  {
+   "title": "Substation Engineer Intern - Grid (Summer 2027)",
+   "company": "Sargent & Lundy",
+   "location": "Reading, PA",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ab68cd6c6fe0dec811a530f"
+   "url": "https://jobright.ai/jobs/info/6a99f0afad752e2ad5502e74"
   },
   {
-   "title": "Summer 2027 – Test Engineering Internship",
-   "company": "CesiumAstro",
-   "location": "Westminster, CO",
-   "area_group": "West",
+   "title": "Substation Engineer Intern - Grid (Summer 2027)",
+   "company": "Sargent & Lundy",
+   "location": "Richmond, VA",
+   "area_group": "Southeast",
    "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6a908db40bd89e205d24af61"
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a99f0adad752e2ad5502e6e"
   },
   {
-   "title": "Summer 2027 Engineering Internship, Mechanical",
-   "company": "Mach Industries",
-   "location": "Huntington Beach, CA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ab6bbd4b3db59402d102142"
-  },
-  {
-   "title": "Electrical Design Engineering Intern",
-   "company": "Qorvo, Inc.",
-   "location": "Richardson, TX",
+   "title": "Process & Mechanical Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Houston, TX",
    "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ab6a6fb9d4843569fe4e9ff"
+   "url": "https://jobright.ai/jobs/info/6a9b2eb590a313642c658f79"
   },
   {
-   "title": "Materials Engineering Intern 2027",
-   "company": "Terracon",
-   "location": "Saint Paul, MN",
-   "area_group": "Midwest",
+   "title": "Protective Design Engineer Internship - Summer 2027",
+   "company": "KPFF Consulting Engineers",
+   "location": "San Francisco, CA",
+   "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ab6b92f9d4843569fe4f156"
+   "url": "https://jobright.ai/jobs/info/6a9a56b41388387060593445"
   },
   {
-   "title": "Engineering Intern",
-   "company": "Reyco Granning Suspensions",
-   "location": "Mitchell, SD",
-   "area_group": "Midwest",
+   "title": "Physical Design Engineer Intern, BS - Summer 2027",
+   "company": "Marvell Technology",
+   "location": "Santa Clara, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6a9b6d4e90a313642c65a048"
+  },
+  {
+   "title": "Manufacturing Engineer Intern (Summer 2027)",
+   "company": "Saronic Technologies",
+   "location": "Austin, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aa1c26edbc0e60e37e1370f"
+  },
+  {
+   "title": "Engineering Intern - Kiewit Mining Group 2027",
+   "company": "Kiewit",
+   "location": "Gillette, WY",
+   "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
+   "visa_reason": "Description mentions 'h1b'",
    "fit_score": 57,
-   "url": "https://jobright.ai/jobs/info/6ab6b7919d4843569fe4f06c"
+   "url": "https://jobright.ai/jobs/info/6a9b3932d5ff1f3f1c39e47e"
   },
   {
-   "title": "Transmission Line Engineer Intern - Grid (Summer 2027)",
-   "company": "Sargent & Lundy",
-   "location": "Cranberry Township, PA",
-   "area_group": "Northeast",
-   "work_model": "Hybrid",
+   "title": "Process Engineering Intern",
+   "company": "Novonesis",
+   "location": "Franklinton, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 51,
-   "url": "https://jobright.ai/jobs/info/6a99f0be551435518ebf2239"
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6a9b14b5d5ff1f3f1c39d911"
   },
   {
-   "title": "Land Engineering Intern - Summer 2027",
-   "company": "VHB",
-   "location": "Watertown, MA",
-   "area_group": "Northeast",
-   "work_model": "Hybrid",
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Raleigh, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 51,
-   "url": "https://jobright.ai/jobs/info/6aa42be9f3aa936e2cdb016f"
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6aaac698f6bd9d2d17c1965c"
   },
   {
-   "title": "Process Engineer Intern",
-   "company": "Comfort Systems USA",
+   "title": "Engineering Aide Temp Coops - College Students (Engineering Majors)",
+   "company": "Con Edison",
+   "location": "New York, NY",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a7dc7b919ce4e6e9d92f951"
+  },
+  {
+   "title": "Completions Engineering Internship",
+   "company": "Fervo Energy",
    "location": "Houston, TX",
    "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6ab679339d4843569fe4d9b8"
+   "url": "https://jobright.ai/jobs/info/6a9b2ebe90a313642c658f7a"
   },
   {
-   "title": "Field/Office Engineer Internship - Southern California District (Summer 2027)",
-   "company": "Kiewit",
-   "location": "San Diego, CA",
+   "title": "Maintenance & Reliability Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Milford, UT",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6ab6ba1d634ec6aa7c0d43ef"
+   "url": "https://jobright.ai/jobs/info/6a9b19cffe45b8490f606d81"
   },
   {
-   "title": "Substation Engineer Intern - Grid (Summer 2027)",
-   "company": "Sargent & Lundy",
-   "location": "Indianapolis, IN",
+   "title": "Operations Engineering Internship",
+   "company": "Fervo Energy",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a9b2ec31388387060597047"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Pittsburgh, PA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ab80179ba1c25652c612afd"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Morristown, NJ",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a9a4295a33d28569fb99860"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Omaha, NE",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a99f073551435518ebf220e"
+   "url": "https://jobright.ai/jobs/info/6aa8cb9d17ddad6a8a47d494"
   },
   {
-   "title": "Project Engineer Intern",
-   "company": "Swinerton",
-   "location": "Concord, CA",
-   "area_group": "West",
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Beltsville, MD",
+   "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a9a799c90a313642c6558fb"
+   "url": "https://jobright.ai/jobs/info/6aa5387982e82a31997bcce1"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa0dc8b5b2d5633ef3c0a62"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Des Moines, IA",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa8cbc9eff87f571fc97ce3"
+  },
+  {
+   "title": "Building Automation Systems Specialist Internship",
+   "company": "Siemens",
+   "location": "Plymouth, MI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa3840a959a10d7230d20cb"
+  },
+  {
+   "title": "Fall 2026 Engineering Intern - Davis Besse",
+   "company": "Vistra Corp.",
+   "location": "Davis-Besse",
+   "area_group": "Unknown",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a550c474119652ff3862e5c"
   }
  ]
 }
