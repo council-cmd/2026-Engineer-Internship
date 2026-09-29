@@ -1,78 +1,64 @@
 {
- "generated_at": "2026-09-28T21:13:34+00:00",
- "date": "2026-09-28",
+ "generated_at": "2026-09-29T21:13:21+00:00",
+ "date": "2026-09-29",
  "status": "ok",
  "error": "",
  "counts": {
   "scanned": 100,
-  "new": 97,
-  "kept": 19,
+  "new": 74,
+  "kept": 18,
   "excluded_on_visa": 2
  },
- "fetch_report": "Job descriptions: read 13 of 21 job pages (description read x13, jobright: no description in page x8).",
+ "fetch_report": "Job descriptions: read 14 of 20 job pages (description read x14, jobright: no description in page x6).",
  "fetch_diagnostics": {
-  "jobright_pages": 21,
+  "jobright_pages": 20,
   "employer_pages": 0,
-  "descriptions_read": 13,
+  "descriptions_read": 14,
   "from_employer_site": 0,
   "outcomes": {
-   "description read": 13,
-   "jobright: no description in page": 8
+   "description read": 14,
+   "jobright: no description in page": 6
   },
   "blocked": false,
   "block_reason": "",
   "unresolved_samples": [
    {
-    "url": "https://jobright.ai/jobs/info/6abaaf07ee0b348be729ae42",
+    "url": "https://jobright.ai/jobs/info/6a996d9d551435518ebee4a2",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6aa8231382e82a31997c407c",
+    "url": "https://jobright.ai/jobs/info/6a8487a258ded76ad8fe7c9b",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6aa8355582e82a31997c4712",
+    "url": "https://jobright.ai/jobs/info/6abc00827119e56191ceab83",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6abaae68d2914e9273eecad1",
+    "url": "https://jobright.ai/jobs/info/6a848b7258ded76ad8fe7e50",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6abaae66d2914e9273eecacc",
+    "url": "https://jobright.ai/jobs/info/6abbfef87119e56191ceaa8c",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a9e1c75a7ba386c5d670d8c",
-    "employer_url": "",
-    "notes": [
-     "jobright page had no readable description"
-    ]
-   },
-   {
-    "url": "https://jobright.ai/jobs/info/6a983596dd171c7285790c58",
-    "employer_url": "",
-    "notes": [
-     "jobright page had no readable description"
-    ]
-   },
-   {
-    "url": "https://jobright.ai/jobs/info/6a8863b2680f314a29d3bac7",
+    "url": "https://jobright.ai/jobs/info/6abbfb957119e56191cea89d",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
@@ -83,213 +69,202 @@
  "warnings": [],
  "jobs": [
   {
-   "title": "Mechanical Intern",
-   "company": "Smith Seckman Reid, Inc.",
-   "location": "Nashville, TN",
-   "area_group": "Southeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 89,
-   "url": "https://jobright.ai/jobs/info/6a9e1ed568f82b4036738b86"
-  },
-  {
-   "title": "Mechanical Engineering Intern",
-   "company": "SmithGroup",
-   "location": "Chicago, IL",
-   "area_group": "Midwest",
-   "work_model": "Hybrid",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 83,
-   "url": "https://jobright.ai/jobs/info/6abaae25ee0b348be729adee"
-  },
-  {
-   "title": "Mechanical Engineering Intern (Buildings)",
-   "company": "HDR",
-   "location": "Boise, ID",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6abab4cbd2914e9273eecd24"
-  },
-  {
-   "title": "R&D Intern, Coating",
-   "company": "James Hardie",
-   "location": "Fontana, CA",
-   "area_group": "West",
+   "title": "Mechanical-Electrical-Plumbing Engineering Intern",
+   "company": "C.T. Male Associates Engineering, Surveying, Architecture, Landscape Architecture & Geology, DPC",
+   "location": "Latham, NY",
+   "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6abaab35ee0b348be729aca4"
+   "url": "https://jobright.ai/jobs/info/6abbfeb77119e56191ceaa4d"
   },
   {
-   "title": "Mechanical Intern",
-   "company": "Smith Seckman Reid, Inc.",
-   "location": "Fort Worth, TX",
-   "area_group": "Southwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6a9e1ed675edfa11b47105d6"
-  },
-  {
-   "title": "Mechanical Intern",
-   "company": "Smith Seckman Reid, Inc.",
-   "location": "Houston, TX",
-   "area_group": "Southwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ab091a92e757fcb5c8be139"
-  },
-  {
-   "title": "Mechanical Intern",
-   "company": "Smith Seckman Reid, Inc.",
-   "location": "Dallas, TX",
-   "area_group": "Southwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6a9e1ee368f82b4036738b91"
-  },
-  {
-   "title": "2027 Summer Project Engineer Internship",
-   "company": "Granite Construction",
-   "location": "Kennewick, WA",
+   "title": "Design Engineer Intern",
+   "company": "MACOM",
+   "location": "Newport Beach, CA",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 77,
-   "url": "https://jobright.ai/jobs/info/6abaa0d11acb8fc6f09c0a4f"
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6abbfeee3217d1d13329c73f"
   },
   {
-   "title": "Drinking Water Engineering Intern",
-   "company": "HDR",
-   "location": "Boise, ID",
-   "area_group": "West",
+   "title": "HVAC Design & Product Engineering Intern",
+   "company": "MAHLE",
+   "location": "Farmington Hills, MI",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abab511d2914e9273eecd3c"
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6abbfe177119e56191cea9db"
   },
   {
-   "title": "Power Engineering Intern",
-   "company": "HDR",
-   "location": "Boise, ID",
-   "area_group": "West",
+   "title": "HVAC Product Engineering Intern",
+   "company": "MAHLE",
+   "location": "Farmington Hills, MI",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abab50ed2914e9273eecd32"
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6abbfd853217d1d13329c64d"
   },
   {
-   "title": "Intern/Co-Op - Estimating Department",
-   "company": "IMC Construction",
-   "location": "DE",
+   "title": "Packaging Engineer Intern",
+   "company": "MACOM",
+   "location": "Morrisville, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 75,
+   "url": "https://jobright.ai/jobs/info/6abbfeb6a9a644f965689804"
+  },
+  {
+   "title": "AR Engineering CO-OP",
+   "company": "Amsted Rail",
+   "location": "Camp Hill, PA",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abab0241acb8fc6f09c0f98"
+   "url": "https://jobright.ai/jobs/info/6a57f0c49f1f56462cf678d4"
   },
   {
-   "title": "Mechanical Engineering Intern",
-   "company": "SmithGroup",
-   "location": "Pittsburgh, PA",
-   "area_group": "Northeast",
-   "work_model": "Hybrid",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abaae68d2914e9273eecad1"
-  },
-  {
-   "title": "Mechanical Engineering Intern",
-   "company": "SmithGroup",
-   "location": "Detroit, MI",
+   "title": "AR Engineering CO-OP",
+   "company": "Amsted Rail",
+   "location": "Hammond, IN",
    "area_group": "Midwest",
-   "work_model": "Hybrid",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abaae66d2914e9273eecacc"
+   "url": "https://jobright.ai/jobs/info/6abbff3f3217d1d13329c77f"
   },
   {
-   "title": "Talent Network: Mechanical Engineering 2027",
-   "company": "Madison Gas and Electric",
-   "location": "Madison, WI",
+   "title": "Automation Intern",
+   "company": "Link Snacks",
+   "location": "Minong, WI",
    "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6aa9abce3387a3d9b67d5fdc"
+  },
+  {
+   "title": "Process Engineering Intern",
+   "company": "Qorvo, Inc.",
+   "location": "Richardson, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a950366c12c90443efce194"
+  },
+  {
+   "title": "Process Engineering Intern",
+   "company": "Qorvo, Inc.",
+   "location": "Hillsboro, OR",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'visa sponsorship'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a95035c9864261ccd2a4cce"
+  },
+  {
+   "title": "Process Engineering Intern Job Details / Qorvo",
+   "company": "Qorvo, Inc.",
+   "location": "Hillsboro, OR",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a996d8290a313642c65042f"
+  },
+  {
+   "title": "Intern- Process Automation Developer",
+   "company": "Zions Bancorporation",
+   "location": "Midvale, UT",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6abc0087a9a644f965689955"
+  },
+  {
+   "title": "Manufacturing Intern",
+   "company": "Vexra Engineering",
+   "location": "CO",
+   "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6aa8231382e82a31997c407c"
+   "url": "https://jobright.ai/jobs/info/6abbfb957119e56191cea89d"
   },
   {
-   "title": "Mechanical Intern",
-   "company": "Smith Seckman Reid, Inc.",
-   "location": "Overland Park, KS",
-   "area_group": "Midwest",
+   "title": "Mechanical Engineer Intern (Spring 2027)",
+   "company": "Zipline",
+   "location": "South San Francisco, CA",
+   "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6a9e1c75a7ba386c5d670d8c"
+   "url": "https://jobright.ai/jobs/info/6a8487a258ded76ad8fe7c9b"
   },
   {
-   "title": "Self-Built Engineer Intern (CDN Platform) - 2027 Summer",
-   "company": "ByteDance",
-   "location": "San Jose, CA",
+   "title": "Mechanical Engineer Intern (Summer 2027)",
+   "company": "Zipline",
+   "location": "South San Francisco, CA",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a983596dd171c7285790c58"
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6a848b7258ded76ad8fe7e50"
   },
   {
-   "title": "Self-Built Engineer Intern (CDN Platform) - 2027 Summer",
-   "company": "ByteDance",
-   "location": "Seattle, WA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a8863b2680f314a29d3bac7"
-  },
-  {
-   "title": "Digital Automation Intern",
-   "company": "HDR",
-   "location": "Omaha, NE",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6abaaf07ee0b348be729ae42"
-  },
-  {
-   "title": "Intern/Co-Op - Safety Department",
-   "company": "IMC Construction",
-   "location": "Philadelphia, PA",
+   "title": "Quality Engineer Intern",
+   "company": "MACOM",
+   "location": "Nashua, NH",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6aa8355582e82a31997c4712"
+   "url": "https://jobright.ai/jobs/info/6abbfef87119e56191ceaa8c"
+  },
+  {
+   "title": "Process Engineering Intern Job Details / Qorvo",
+   "company": "Qorvo, Inc.",
+   "location": "Richardson, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a996d9d551435518ebee4a2"
+  },
+  {
+   "title": "Intern- Process Engineer",
+   "company": "Zions Bancorporation",
+   "location": "Midvale, UT",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6abc00827119e56191ceab83"
   }
  ]
 }
