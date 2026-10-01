@@ -1,105 +1,212 @@
 {
- "generated_at": "2026-09-30T21:13:08+00:00",
- "date": "2026-09-30",
+ "generated_at": "2026-10-01T21:13:15+00:00",
+ "date": "2026-10-01",
  "status": "ok",
  "error": "",
  "counts": {
   "scanned": 100,
-  "new": 63,
-  "kept": 7,
-  "excluded_on_visa": 1
+  "new": 80,
+  "kept": 14,
+  "excluded_on_visa": 3
  },
- "fetch_report": "Job descriptions: read all 8 job pages successfully.",
+ "fetch_report": "Job descriptions: read 13 of 17 job pages (description read x13, jobright: no description in page x4).",
  "fetch_diagnostics": {
-  "jobright_pages": 8,
+  "jobright_pages": 17,
   "employer_pages": 0,
-  "descriptions_read": 8,
+  "descriptions_read": 13,
   "from_employer_site": 0,
   "outcomes": {
-   "description read": 8
+   "description read": 13,
+   "jobright: no description in page": 4
   },
   "blocked": false,
   "block_reason": "",
-  "unresolved_samples": []
+  "unresolved_samples": [
+   {
+    "url": "https://jobright.ai/jobs/info/6aa1c47f0ffb3d4fea6b6f6c",
+    "employer_url": "",
+    "notes": [
+     "jobright page had no readable description"
+    ]
+   },
+   {
+    "url": "https://jobright.ai/jobs/info/6aa4671ec1928370a285dd3d",
+    "employer_url": "",
+    "notes": [
+     "jobright page had no readable description"
+    ]
+   },
+   {
+    "url": "https://jobright.ai/jobs/info/6abea0624ac55253f5d619d8",
+    "employer_url": "",
+    "notes": [
+     "jobright page had no readable description"
+    ]
+   },
+   {
+    "url": "https://jobright.ai/jobs/info/6aa1c73c500b01124c77efab",
+    "employer_url": "",
+    "notes": [
+     "jobright page had no readable description"
+    ]
+   }
+  ]
  },
  "warnings": [],
  "jobs": [
   {
-   "title": "Mechanical Intern",
-   "company": "Batchelor & Kimball, Inc.",
-   "location": "Muskogee, OK",
-   "area_group": "Southwest",
+   "title": "Hardware Development Engineer Intern/Co-Op, ROBOTICS - 2027",
+   "company": "Amazon",
+   "location": "North Reading, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aa1d86a3272060a8e3f2722"
+  },
+  {
+   "title": "Robotics - Applied Scientist II Intern / Co-op - 2026 (Robotics, Manipulation, Perception, Motion Planning, Autonomous Mobile Robots, Computer Vision, Machine Learning, Controls, and more)",
+   "company": "Amazon",
+   "location": "Boston, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6a521666e726ec56126a17c6"
+  },
+  {
+   "title": "Mechanical Engineering (Thermal Generation) Intern - Summer 2027",
+   "company": "WSP in the U.S.",
+   "location": "Mount Laurel, NJ",
+   "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6abd3cb48ff3fb9b3bc6f391"
+   "url": "https://jobright.ai/jobs/info/6aa08a57dbc0e60e37e0e4f1"
   },
   {
-   "title": "ASIC Design Engineer Intern (Video Silicon IP) - 2027 Summer",
-   "company": "ByteDance",
-   "location": "San Jose, CA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6abd57fb372c01f6cd71ff8a"
-  },
-  {
-   "title": "Fire Engineering Intern (Available June 2027)",
-   "company": "Arup",
-   "location": "New York, NY",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abd521e8ff3fb9b3bc6ffe4"
-  },
-  {
-   "title": "Site Reliability Engineer Intern (Data Infra) - 2027 Fall",
-   "company": "ByteDance",
-   "location": "San Jose, CA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abd58068ff3fb9b3bc70204"
-  },
-  {
-   "title": "Site Reliability Engineer Intern (Data Infra) - 2027 Summer",
-   "company": "ByteDance",
-   "location": "Seattle, WA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abd57e2064da25272dfd183"
-  },
-  {
-   "title": "Continuous Improvement Engineer Intern",
-   "company": "ProAmpac",
-   "location": "Westfield, MA",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6abd51f18ff3fb9b3bc6ffcb"
-  },
-  {
-   "title": "2027 Engineer Intern",
-   "company": "Steiner Electric",
-   "location": "Itasca, IL",
+   "title": "Mechanical Engineering (Thermal Generation) Intern - Summer 2027",
+   "company": "WSP in the U.S.",
+   "location": "Overland Park, KS",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 57,
-   "url": "https://jobright.ai/jobs/info/6abd534e064da25272dfcffa"
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aa181a82f936e4a53dabf97"
+  },
+  {
+   "title": "Mechanical Engineering (Thermal Generation) Intern - Summer 2027",
+   "company": "WSP in the U.S.",
+   "location": "Meridian, ID",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aa43dd1422289703bd65ca1"
+  },
+  {
+   "title": "Instrumentation & Controls Engineer Intern - Energy & Industrial Group (Summer 2027)",
+   "company": "Sargent & Lundy",
+   "location": "Englewood, CO",
+   "area_group": "West",
+   "work_model": "Hybrid",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 69,
+   "url": "https://jobright.ai/jobs/info/6aa1b3f23272060a8e3f19d9"
+  },
+  {
+   "title": "Electrification Engineer Intern - Kiewit Infrastructure Engineers (Summer 2027)",
+   "company": "Kiewit",
+   "location": "McLean, VA",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6abea06a8ff3fb9b3bc74c25"
+  },
+  {
+   "title": "2027 Spring Quality Engineering Intern (R20505)",
+   "company": "MKS Inc.",
+   "location": "Rochester, NY",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6aa1c7333272060a8e3f219a"
+  },
+  {
+   "title": "Nuclear Engineering Intern",
+   "company": "PPL",
+   "location": "Lexington, KY",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6abea4b3d9621c5b28390747"
+  },
+  {
+   "title": "2027 Summer Project Engineer Intern",
+   "company": "Skanska",
+   "location": "Phoenix, AZ",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a84ad1bd34f700f87fba27b"
+  },
+  {
+   "title": "Nuclear Engineer Intern",
+   "company": "VertoTech",
+   "location": "El Segundo, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6abea1b9d9621c5b28390639"
+  },
+  {
+   "title": "Summer 2027 Process Engineering Intern",
+   "company": "ATI",
+   "location": "Oakdale, PA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6abea0624ac55253f5d619d8"
+  },
+  {
+   "title": "Summer 2027 SRE - Observability Engineering Internship",
+   "company": "ICD Portal",
+   "location": "Jersey City, NJ",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa4671ec1928370a285dd3d"
+  },
+  {
+   "title": "2027 Spring Quality Engineer Intern/Co-op (R20246)",
+   "company": "MKS Inc.",
+   "location": "Richmond, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa1c73c500b01124c77efab"
   }
  ]
 }
