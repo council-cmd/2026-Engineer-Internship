@@ -1,78 +1,78 @@
 {
- "generated_at": "2026-10-04T21:34:15+00:00",
- "date": "2026-10-04",
+ "generated_at": "2026-10-06T21:14:10+00:00",
+ "date": "2026-10-06",
  "status": "ok",
  "error": "",
  "counts": {
   "scanned": 100,
-  "new": 63,
-  "kept": 23,
-  "excluded_on_visa": 3
+  "new": 90,
+  "kept": 39,
+  "excluded_on_visa": 4
  },
- "fetch_report": "Job descriptions: read 14 of 26 job pages (description read x14, jobright: no description in page x12).",
+ "fetch_report": "Job descriptions: read 10 of 43 job pages (jobright: no description in page x33, description read x10).",
  "fetch_diagnostics": {
-  "jobright_pages": 26,
+  "jobright_pages": 43,
   "employer_pages": 0,
-  "descriptions_read": 14,
+  "descriptions_read": 10,
   "from_employer_site": 0,
   "outcomes": {
-   "description read": 14,
-   "jobright: no description in page": 12
+   "description read": 10,
+   "jobright: no description in page": 33
   },
   "blocked": false,
   "block_reason": "",
   "unresolved_samples": [
    {
-    "url": "https://jobright.ai/jobs/info/6a8927324afae74a0834e3c4",
+    "url": "https://jobright.ai/jobs/info/6ac40fe88ff3fb9b3bc83dcd",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a95de27c8763a3a87ffcaa9",
+    "url": "https://jobright.ai/jobs/info/6ac537f3372c01f6cd738486",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ac292a1d9621c5b2839b9bd",
+    "url": "https://jobright.ai/jobs/info/6aa83d9882e82a31997c49c5",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ab45b5964816213f2d98ec2",
+    "url": "https://jobright.ai/jobs/info/6ac502b5372c01f6cd736ff2",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a5c1a563ac7627fe9009b08",
+    "url": "https://jobright.ai/jobs/info/6ab27c161e4847ddae9147e4",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ac2895e8ff3fb9b3bc7ff01",
+    "url": "https://jobright.ai/jobs/info/6aa83da1930bff471a2a5f66",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6ab8697739fd8792cb73f3c3",
+    "url": "https://jobright.ai/jobs/info/6ac535e48ff3fb9b3bc88486",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a6f2397c56c0956e8adc410",
+    "url": "https://jobright.ai/jobs/info/6a8d9cb325fc4e7ae3dbc937",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
@@ -83,257 +83,433 @@
  "warnings": [],
  "jobs": [
   {
-   "title": "Manufacturing Engineering Intern",
-   "company": "Velastra",
-   "location": "TX",
-   "area_group": "Southwest",
+   "title": "Mechanical Engineer Intern (Year-Round)",
+   "company": "Charter Steel",
+   "location": "Fostoria, OH",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h-1b'",
-   "fit_score": 91,
-   "url": "https://jobright.ai/jobs/info/6ac26517372c01f6cd72e591"
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6ab1966cd2a93d5a97ebba2f"
+  },
+  {
+   "title": "Mechanical Engineer Intern (Year-Round)",
+   "company": "Charter Steel",
+   "location": "Saukville, WI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aad6fa66956574eac8b5ae9"
+  },
+  {
+   "title": "Mechanical Engineer Intern (Year-Round)",
+   "company": "Charter Steel",
+   "location": "Cleveland, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6aa84a4682e82a31997c4f9e"
+  },
+  {
+   "title": "Robotics Intern - Winter 2026",
+   "company": "Mytra",
+   "location": "Brisbane, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6ab2bc8b326574570a002ce7"
+  },
+  {
+   "title": "Thermal Power Engineering Intern",
+   "company": "Hatch",
+   "location": "Tampa, FL",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 71,
+   "url": "https://jobright.ai/jobs/info/6aa83da1930bff471a2a5f66"
+  },
+  {
+   "title": "Thermal Power Engineering Intern Job Details / Hatch",
+   "company": "Hatch",
+   "location": "Tampa, FL",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 71,
+   "url": "https://jobright.ai/jobs/info/6ab27c161e4847ddae9147e4"
+  },
+  {
+   "title": "Launch Fluids and Operations Engineer Intern (Cape Canaveral, FL)",
+   "company": "Relativity Space",
+   "location": "Cape Canaveral, FL",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 71,
+   "url": "https://jobright.ai/jobs/info/6ac53345064da25272e1569b"
+  },
+  {
+   "title": "Launch Mechanical/Electrical Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Cape Canaveral, FL",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 71,
+   "url": "https://jobright.ai/jobs/info/6ac5335e8ff3fb9b3bc883c9"
   },
   {
    "title": "Mechanical Engineering Intern",
-   "company": "Structavia Consulting Engineers",
-   "location": "MA",
-   "area_group": "Northeast",
+   "company": "Dynareon",
+   "location": "United States",
+   "area_group": "Unknown",
    "work_model": "Remote",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 85,
-   "url": "https://jobright.ai/jobs/info/6ac28af70e027c0f3b3a52aa"
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 67,
+   "url": "https://jobright.ai/jobs/info/6ac5312f8ff3fb9b3bc88305"
   },
   {
-   "title": "Manufacturing Engineering Intern",
-   "company": "VertoTech",
-   "location": "MA",
-   "area_group": "Northeast",
-   "work_model": "Remote",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 85,
-   "url": "https://jobright.ai/jobs/info/6ac2ab6dd9621c5b2839bbb3"
-  },
-  {
-   "title": "Analog Design Engineer Intern",
+   "title": "Design Evaluation Engineer Intern",
    "company": "Analog Devices",
    "location": "Wilmington, MA",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6aaa16ff09ae03adcace107a"
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6aa95ee110b1cd4f41605abb"
   },
   {
-   "title": "Mechanical Engineering Intern",
-   "company": "Avynera Studios",
-   "location": "MO",
+   "title": "Field BIM Coordinator Intern (COOP)",
+   "company": "ARCO/Murray",
+   "location": "Sullivan, IN",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ac2655d8ff3fb9b3bc7e6ab"
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a8d61ec2f736c304f2a9575"
   },
   {
-   "title": "R&D Engineering Intern",
-   "company": "Boston Scientific",
-   "location": "Arbor Lakes, MN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ab43f20ef911c35dffa42c0"
-  },
-  {
-   "title": "R&D Engineering Intern",
-   "company": "Boston Scientific",
-   "location": "Maple Grove, MN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ab719e23a2ec87116e25405"
-  },
-  {
-   "title": "R&D Engineering Intern Job Details / Boston Scientific",
-   "company": "Boston Scientific",
-   "location": "Maple Grove, MN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6abbb776b23c6fb2b81a2a73"
-  },
-  {
-   "title": "R&D Engineering Internship Job Details / Boston Scientific",
-   "company": "Boston Scientific",
-   "location": "Maple Grove, MN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ab27b8d8254c44790e5560a"
-  },
-  {
-   "title": "Intern/Co-op - Refining Mechanical Engineer (Spring 2027)",
-   "company": "Marathon Petroleum Corporation",
-   "location": "Findlay, OH",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'visa sponsorship'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6a52043702522b5b722edc7d"
-  },
-  {
-   "title": "Mechanical Engineering Intern",
-   "company": "Robynex Automation",
-   "location": "MA",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description read; nothing rules out international students",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ac264b5372c01f6cd72e587"
-  },
-  {
-   "title": "Process Engineering Intern",
-   "company": "Ingredion Incorporated",
-   "location": "Belcamp, MD",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'cpt'",
-   "fit_score": 77,
-   "url": "https://jobright.ai/jobs/info/6aa5a4f582e82a31997be3a8"
-  },
-  {
-   "title": "Site Reliability Engineer Intern (Data Infra) - 2027 Summer",
-   "company": "ByteDance",
+   "title": "Core Engineering Intern",
+   "company": "Etched",
    "location": "San Jose, CA",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description mentions 'h1b'",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ac29dda372c01f6cd72fefc"
+   "url": "https://jobright.ai/jobs/info/6aa8f4ae3387a3d9b67d365d"
   },
   {
-   "title": "Manufacturing Scientist/Quality Control Chemist Intern – Clinton, Indiana (Summer 2027)",
-   "company": "Elanco",
-   "location": "Clinton, IN",
+   "title": "Mechanical Engineering Intern",
+   "company": "Clear Edge Filtration",
+   "location": "Buffalo, NY",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac502b5372c01f6cd736ff2"
+  },
+  {
+   "title": "Engineer Intern - Mechanical (Summer 2027)",
+   "company": "Pierce Manufacturing",
+   "location": "Garner, IA",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6a885ee1d34f700f87fc831f"
+   "url": "https://jobright.ai/jobs/info/6a95b9ad4c22023a079355e0"
   },
   {
-   "title": "Battery R&D Intern",
-   "company": "LiftOFF Technology",
-   "location": "Somerville, MA",
+   "title": "Engineer Intern - Mechanical (Summer 2027)",
+   "company": "Pierce Manufacturing",
+   "location": "Dodge Center, MN",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6a95b9a73843db0159906c89"
+  },
+  {
+   "title": "Manufacturing Internship, Summer 2027",
+   "company": "Procter & Gamble",
+   "location": "Cincinnati, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6a8d9cb325fc4e7ae3dbc937"
+  },
+  {
+   "title": "Additive Manufacturing Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac53335d9621c5b283a3d33"
+  },
+  {
+   "title": "Avionics Manufacturing and Test Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac53351372c01f6cd73835a"
+  },
+  {
+   "title": "Factory Test Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac532ee8ff3fb9b3bc883a8"
+  },
+  {
+   "title": "Manufacturing Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac535e48ff3fb9b3bc88486"
+  },
+  {
+   "title": "Materials Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac5331d372c01f6cd73834e"
+  },
+  {
+   "title": "Mechanical Engineer Intern (CAD Administrator)",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac5331cd9621c5b283a3d2f"
+  },
+  {
+   "title": "Propulsion Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac5335d4ac55253f5d7528a"
+  },
+  {
+   "title": "Robotics Software Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac5330b4ac55253f5d75279"
+  },
+  {
+   "title": "Tooling Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac532f9d9621c5b283a3d29"
+  },
+  {
+   "title": "Vehicle Fluids Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac53344372c01f6cd738355"
+  },
+  {
+   "title": "Vehicle Integration & Test Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac533060e027c0f3b3ad7b1"
+  },
+  {
+   "title": "Hydropower Engineering Intern",
+   "company": "Hatch",
+   "location": "Charlotte, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6aa83d9882e82a31997c49c5"
+  },
+  {
+   "title": "Engineering Internship, Summer 2027",
+   "company": "Procter & Gamble",
+   "location": "Boston, MA",
    "area_group": "Northeast",
    "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6a5c1a563ac7627fe9009b08"
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6a9eb075a7ba386c5d67335f"
   },
   {
-   "title": "Mechanical Engineering Internship",
-   "company": "StructaLink Group",
-   "location": "MA",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ac265b7d9621c5b2839a0c2"
-  },
-  {
-   "title": "Manufacturing Intern",
-   "company": "Vortexion Labs",
-   "location": "VA",
-   "area_group": "Southeast",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ac292a1d9621c5b2839b9bd"
-  },
-  {
-   "title": "System Integration Engineer Intern",
-   "company": "Analog Devices",
-   "location": "Durham, NC",
+   "title": "Quality & Reliability Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Cape Canaveral, FL",
    "area_group": "Southeast",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 57,
-   "url": "https://jobright.ai/jobs/info/6a8927324afae74a0834e3c4"
+   "url": "https://jobright.ai/jobs/info/6ac5332f4ac55253f5d7527e"
   },
   {
-   "title": "Industrial Engineering Intern",
-   "company": "MacLean Power Systems",
-   "location": "Alabaster, AL",
-   "area_group": "Southeast",
+   "title": "Database Engineer Intern - Summer 2027",
+   "company": "DV Trading LLC",
+   "location": "Chicago, IL",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 57,
-   "url": "https://jobright.ai/jobs/info/6a6f2397c56c0956e8adc410"
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac537f3372c01f6cd738486"
   },
   {
-   "title": "Program Intern, Process Automation",
-   "company": "Pilot Company",
-   "location": "Knoxville, TN",
-   "area_group": "Southeast",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 57,
-   "url": "https://jobright.ai/jobs/info/6aa19cd4ef23570cae245164"
-  },
-  {
-   "title": "Material Science/Metallurgical Engineering Intern",
-   "company": "Cleveland-Cliffs",
-   "location": "Butler, PA",
+   "title": "Automation Engineering Apprentice",
+   "company": "JLL",
+   "location": "Windsor, CT",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6aa37f0c5c11cce3603643d4"
+   "url": "https://jobright.ai/jobs/info/6aa832e72ed333b4ea5cddc1"
   },
   {
-   "title": "Field/Office Engineer Intern (Summer 2027) - Kiewit Energy",
-   "company": "Kiewit",
-   "location": "Houston, TX",
+   "title": "Avionics Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac532f48ff3fb9b3bc883ae"
+  },
+  {
+   "title": "Components Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac5332f372c01f6cd738354"
+  },
+  {
+   "title": "Data & Control Systems Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Center, TX",
    "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a95de27c8763a3a87ffcaa9"
+   "url": "https://jobright.ai/jobs/info/6ac5332b372c01f6cd738353"
   },
   {
-   "title": "Industrial Engineering Intern",
-   "company": "StructaLink Group",
-   "location": "Michigan City, IN",
-   "area_group": "Midwest",
+   "title": "Integrated Performance Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6ac2895e8ff3fb9b3bc7ff01"
+   "url": "https://jobright.ai/jobs/info/6ac532e9d9621c5b283a3d26"
+  },
+  {
+   "title": "Vehicle Structures & Mechanisms Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac532ee0e027c0f3b3ad7a9"
+  },
+  {
+   "title": "Vehicle Systems Engineer Intern",
+   "company": "Relativity Space",
+   "location": "Long Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac533838ff3fb9b3bc883d9"
+  },
+  {
+   "title": "Reliability Engineering Intern",
+   "company": "Thermagia Engineering",
+   "location": "New York, NY",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ac531df372c01f6cd7382f3"
   }
  ]
 }
