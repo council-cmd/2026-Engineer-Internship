@@ -1,78 +1,78 @@
 {
- "generated_at": "2026-10-14T21:25:41+00:00",
- "date": "2026-10-14",
+ "generated_at": "2026-10-15T21:28:07+00:00",
+ "date": "2026-10-15",
  "status": "ok",
  "error": "",
  "counts": {
   "scanned": 100,
-  "new": 85,
-  "kept": 27,
-  "excluded_on_visa": 6
+  "new": 98,
+  "kept": 52,
+  "excluded_on_visa": 10
  },
- "fetch_report": "Job descriptions: read 16 of 33 job pages (jobright: no description in page x17, description read x16).",
+ "fetch_report": "Job descriptions: read 27 of 60 job pages (jobright: no description in page x33, description read x27).",
  "fetch_diagnostics": {
-  "jobright_pages": 33,
+  "jobright_pages": 60,
   "employer_pages": 0,
-  "descriptions_read": 16,
+  "descriptions_read": 27,
   "from_employer_site": 0,
   "outcomes": {
-   "description read": 16,
-   "jobright: no description in page": 17
+   "description read": 27,
+   "jobright: no description in page": 33
   },
   "blocked": false,
   "block_reason": "",
   "unresolved_samples": [
    {
-    "url": "https://jobright.ai/jobs/info/6acfc727c9f40bec907fe18e",
+    "url": "https://jobright.ai/jobs/info/6aa860da2ed333b4ea5cf225",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6a9724f0246d697dcee039d8",
+    "url": "https://jobright.ai/jobs/info/6aac8d7695c707f49dff1bb1",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfc476c9f40bec907fdfd7",
+    "url": "https://jobright.ai/jobs/info/6abee6780e027c0f3b39bc78",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfc43d78d51ae69ce07ea0",
+    "url": "https://jobright.ai/jobs/info/6aa5f5112ed333b4ea5c8ba8",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfc518c9f40bec907fe042",
+    "url": "https://jobright.ai/jobs/info/6aa3b5e2c5a856ac7e33b1ce",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfa985c0dd9da253cf3cd8",
+    "url": "https://jobright.ai/jobs/info/6aa4030ef3aa936e2cdaf4b0",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfc22b78d51ae69ce07dae",
+    "url": "https://jobright.ai/jobs/info/6ac6b3514ac55253f5d7ba2d",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
     ]
    },
    {
-    "url": "https://jobright.ai/jobs/info/6acfc1d82cc4e9d17e90a36c",
+    "url": "https://jobright.ai/jobs/info/6aa3d5eff3aa936e2cdae164",
     "employer_url": "",
     "notes": [
      "jobright page had no readable description"
@@ -83,301 +83,576 @@
  "warnings": [],
  "jobs": [
   {
-   "title": "R&D Intern, Protein Fortification & Analytical Characterization",
-   "company": "Ingredion Incorporated",
-   "location": "Bridgewater, NJ",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'cpt'",
-   "fit_score": 91,
-   "url": "https://jobright.ai/jobs/info/6a97548be4e60e4b8da5da30"
-  },
-  {
-   "title": "Starch Chemistry R&D Intern",
-   "company": "Ingredion Incorporated",
-   "location": "Bridgewater, NJ",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'cpt'",
-   "fit_score": 91,
-   "url": "https://jobright.ai/jobs/info/6a975485455eaf6a08c1c31d"
-  },
-  {
-   "title": "Engineer Intern - Mechanical (Year Round)",
-   "company": "Oshkosh Corporation",
-   "location": "Clearwater, FL",
-   "area_group": "Southeast",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 89,
-   "url": "https://jobright.ai/jobs/info/6acfa7312cc4e9d17e9099f8"
-  },
-  {
-   "title": "Amazon Robotics - Hardware Development Engineer Intern/Co-op - 2027",
-   "company": "Amazon",
-   "location": "Westborough, MA",
+   "title": "Summer 2027 Intern - Product Engineer (Coil Product)",
+   "company": "ATI",
+   "location": "Natrona Heights, PA",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6acfc59378d51ae69ce07f94"
+   "url": "https://jobright.ai/jobs/info/6ad128ee18608b6f36f81fee"
   },
   {
-   "title": "Intern, Mechanical",
-   "company": "LEO A DALY",
-   "location": "Omaha, NE",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6ac94af36355f8776ff185b2"
-  },
-  {
-   "title": "Mechanical Engineering Intern",
-   "company": "Vexra Engineering",
-   "location": "MO",
-   "area_group": "Midwest",
+   "title": "Test Engineer Intern",
+   "company": "CNH",
+   "location": "New Holland, PA",
+   "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 79,
-   "url": "https://jobright.ai/jobs/info/6acfc67cc0dd9da253cf47f5"
+   "url": "https://jobright.ai/jobs/info/6aa088ed3b5aa83237b09bfc"
   },
   {
-   "title": "MECHANICAL ENGINEERING INTERN",
-   "company": "TE Connectivity",
-   "location": "Winston-Salem, NC",
+   "title": "Intern - Mechanical Equipment Engineer - Spring 2027",
+   "company": "Commonwealth Fusion Systems",
+   "location": "Devens, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 79,
+   "url": "https://jobright.ai/jobs/info/6ad127c4256e49282e6531de"
+  },
+  {
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Charlotte, NC",
    "area_group": "Southeast",
-   "work_model": "Hybrid",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 75,
-   "url": "https://jobright.ai/jobs/info/6aa50e90a77a53f5a156f52c"
+   "url": "https://jobright.ai/jobs/info/6a9b0aded5ff1f3f1c39d57a"
   },
   {
-   "title": "R&D Intern - Summer 2026",
-   "company": "ABB",
-   "location": "Bloomfield, CT",
-   "area_group": "Northeast",
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Holly Springs, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 75,
+   "url": "https://jobright.ai/jobs/info/6a9b0aebfe45b8490f6068d7"
+  },
+  {
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Peachtree City, GA",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 75,
+   "url": "https://jobright.ai/jobs/info/6a9b0aedd5ff1f3f1c39d583"
+  },
+  {
+   "title": "2027 Internship - Systems Engineering - Power & Control",
+   "company": "Cirrus Logic",
+   "location": "Austin, TX",
+   "area_group": "Southwest",
    "work_model": "Hybrid",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6acd1da8ddd23cce28a10b70"
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 69,
+   "url": "https://jobright.ai/jobs/info/6ad1282a256e49282e653222"
   },
   {
-   "title": "Project Engineer Intern",
-   "company": "E&K Companies, Inc.",
-   "location": "Castroville, CA",
-   "area_group": "West",
+   "title": "Summer 2027 Intern - Product/ Process Engineer (Plate Product)",
+   "company": "ATI",
+   "location": "Washington, PA",
+   "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6acfb5f02cc4e9d17e909f8a"
+   "url": "https://jobright.ai/jobs/info/6ad128ea18608b6f36f81fe7"
   },
   {
-   "title": "Architecture Co-op/Intern (Part-Time) - Spring 2027",
-   "company": "SSOE Group",
-   "location": "Toledo, OH",
+   "title": "Design Cost Management - Cost Engineer Intern",
+   "company": "CNH",
+   "location": "Oak Brook, IL",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6a5fb1c2f68dd368023e80f4"
+   "url": "https://jobright.ai/jobs/info/6aa088683b5aa83237b09bab"
   },
   {
-   "title": "Information Technology Co-op (Summer 2027) Job Details / Lubrizol Corporation",
-   "company": "The Lubrizol Corporation",
-   "location": "Wickliffe, OH",
+   "title": "Forward Deployed Engineer Intern (Mountain View)",
+   "company": "Kognitos",
+   "location": "Mountain View, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6ad1290ce2d41540d4a6eb8a"
+  },
+  {
+   "title": "Integration Engineering Intern",
+   "company": "Lincoln Industries",
+   "location": "Lincoln, NE",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6ab74480d7fde2c08ec8b5c8"
+  },
+  {
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Thousand Oaks, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae8d5ff1f3f1c39d57f"
+  },
+  {
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Portage, MI",
    "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
    "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6ac644888ff3fb9b3bc8c35b"
+   "url": "https://jobright.ai/jobs/info/6a9b0ae21388387060596533"
   },
   {
-   "title": "Controls Engineer Intern (Spring 2027)",
-   "company": "Zipline",
-   "location": "South San Francisco, CA",
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a9b0b3590a313642c6584db"
+  },
+  {
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Carlsbad, CA",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
+   "visa_reason": "Description read; nothing rules out international students",
    "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6a85dad974e02153f1458d2b"
+   "url": "https://jobright.ai/jobs/info/6a9b0ae91388387060596539"
   },
   {
-   "title": "Controls Engineer Intern (Summer 2027)",
-   "company": "Zipline",
-   "location": "South San Francisco, CA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "A - Likely OK",
-   "visa_reason": "Description mentions 'h1b'",
-   "fit_score": 65,
-   "url": "https://jobright.ai/jobs/info/6a85daa3cc81eb647e9efb63"
-  },
-  {
-   "title": "Amazon Robotics - Software Development Engineer Intern/Co-op - 2027",
-   "company": "Amazon",
+   "title": "Engneering Co-op - Summer 2027",
+   "company": "RoviSys",
    "location": "Westborough, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 65,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae09c24314c35f97774"
+  },
+  {
+   "title": "Mechanical Engineering Project Management Intern - Summer 2027",
+   "company": "Clean Harbors",
+   "location": "Norwell, MA",
    "area_group": "Northeast",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6acfa985c0dd9da253cf3cd8"
+   "url": "https://jobright.ai/jobs/info/6ad1241ce2d41540d4a6e972"
   },
   {
-   "title": "Mechanical Engineering Intern (Available 2027)",
-   "company": "Arup",
-   "location": "Dallas, TX",
+   "title": "Intern - Driveline Lab Test Engineer",
+   "company": "CNH",
+   "location": "New Holland, PA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aa0e30f500b01124c77b2f5"
+  },
+  {
+   "title": "Intern - Mechanical Engineer - Summer 2027",
+   "company": "Commonwealth Fusion Systems",
+   "location": "Milpitas, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ad127b8ae21edea94fd41ad"
+  },
+  {
+   "title": "Mechanical Engineering Project Management Intern - Summer 2027",
+   "company": "HPC Industrial powered by Clean Harbors",
+   "location": "Norwell, MA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ad11f593d3a5aa909b38102"
+  },
+  {
+   "title": "Avionics Mechanical Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ac6b3514ac55253f5d7ba2d"
+  },
+  {
+   "title": "Avionics Test Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aa3b5e2c5a856ac7e33b1ce"
+  },
+  {
+   "title": "Development Test Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aa860eca77a53f5a157921f"
+  },
+  {
+   "title": "Manufacturing Engineering Intern (Spring 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6abee6780e027c0f3b39bc78"
+  },
+  {
+   "title": "Manufacturing Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aa5f5112ed333b4ea5c8ba8"
+  },
+  {
+   "title": "Thermal Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aac8d9a3dbb1f8967ceb084"
+  },
+  {
+   "title": "Mechanical Engineer Intern",
+   "company": "Novelis",
+   "location": "Berea, KY",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6ad120b518608b6f36f81c49"
+  },
+  {
+   "title": "Engineering Intern",
+   "company": "Trilon",
+   "location": "Albany, NY",
+   "area_group": "Northeast",
+   "work_model": "Hybrid",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description read; nothing rules out international students",
+   "fit_score": 61,
+   "url": "https://jobright.ai/jobs/info/6aaa06b03387a3d9b67d8a89"
+  },
+  {
+   "title": "COOP/INTERN – SERVICE ENGINEERING – SPRING 2027",
+   "company": "Altec",
+   "location": "Creedmoor, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6ad122da256e49282e652f7d"
+  },
+  {
+   "title": "Engineering Intern",
+   "company": "Holland, L.P.",
+   "location": "University Park, IL",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "A - Likely OK",
+   "visa_reason": "Description mentions 'h1b'",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6ad127a83d3a5aa909b38570"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Holly Springs, NC",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae1d5ff1f3f1c39d57b"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Peachtree City, GA",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae9fe45b8490f6068d6"
+  },
+  {
+   "title": "Instrumentation & Controls Engineering Intern - Nuclear (Summer 2027)",
+   "company": "Sargent & Lundy",
+   "location": "Chattanooga, TN",
+   "area_group": "Southeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 57,
+   "url": "https://jobright.ai/jobs/info/6a974446e4e60e4b8da5d4a2"
+  },
+  {
+   "title": "Data and Control Systems Engineering Intern",
+   "company": "AxoraQ",
+   "location": "Jackson, MS",
+   "area_group": "Southeast",
+   "work_model": "Remote",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 53,
+   "url": "https://jobright.ai/jobs/info/6ad1242ba4f99fef8194248b"
+  },
+  {
+   "title": "COOP/INTERN – SERVICE ENGINEERING – SPRING 2027",
+   "company": "Altec",
+   "location": "St. Joseph, MO",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ad122d2256e49282e652f7c"
+  },
+  {
+   "title": "Soil & Crop Modeling Engineering Intern - Round Balers",
+   "company": "CNH",
+   "location": "New Holland, PA",
+   "area_group": "Northeast",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa1854b500b01124c77d052"
+  },
+  {
+   "title": "Intern - Controls Engineer - Summer 2027",
+   "company": "Commonwealth Fusion Systems",
+   "location": "Milpitas, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ad127b23d3a5aa909b38579"
+  },
+  {
+   "title": "Battery Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa4030ef3aa936e2cdaf4b0"
+  },
+  {
+   "title": "Dynamics Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aac8d7695c707f49dff1bb1"
+  },
+  {
+   "title": "EMC Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa4b96aa77a53f5a156dc3b"
+  },
+  {
+   "title": "RF Engineering Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa3d5eff3aa936e2cdae164"
+  },
+  {
+   "title": "Test Automation Intern (Summer 2027)",
+   "company": "Impulse Space",
+   "location": "Redondo Beach, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6aa860da2ed333b4ea5cf225"
+  },
+  {
+   "title": "Industrial Engineering Intern",
+   "company": "Mechronix",
+   "location": "MI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6ad122efe2d41540d4a6e8d5"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Portage, MI",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a9b0af8fe45b8490f6068db"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Aurora, OH",
+   "area_group": "Midwest",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae12cdc5958f53ea91f"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Thousand Oaks, CA",
+   "area_group": "West",
+   "work_model": "On Site",
+   "visa_bucket": "B - Unclear",
+   "visa_reason": "No job description available - visa status not stated",
+   "fit_score": 47,
+   "url": "https://jobright.ai/jobs/info/6a9b0ae01388387060596531"
+  },
+  {
+   "title": "Engineering Co-op - Spring 2027",
+   "company": "RoviSys",
+   "location": "Houston, TX",
    "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6acfc727c9f40bec907fe18e"
-  },
-  {
-   "title": "Computer Vision Engineer Intern, Advanced Manufacturing (Reality Labs)",
-   "company": "Meta",
-   "location": "Sunnyvale, CA",
-   "area_group": "West",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6acfc476c9f40bec907fdfd7"
-  },
-  {
-   "title": "2027 Manufacturing Intern - Kokomo",
-   "company": "Stellantis",
-   "location": "Kokomo, IN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6acfc22b78d51ae69ce07dae"
-  },
-  {
-   "title": "Mechanical Engineering Intern",
-   "company": "TE Connectivity",
-   "location": "Plymouth, MN",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6ac3b25dd9621c5b2839d434"
-  },
-  {
-   "title": "Manufacturing Intern",
-   "company": "TRUMPF",
-   "location": "Farmington, CT",
-   "area_group": "Northeast",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 61,
-   "url": "https://jobright.ai/jobs/info/6a96df4f455eaf6a08c18fa5"
-  },
-  {
-   "title": "Mercury Marine: NVH Engineering Intern",
-   "company": "Brunswick Corporation",
-   "location": "Fond du Lac, WI",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a95e0fdc8763a3a87ffcbff"
+   "url": "https://jobright.ai/jobs/info/6a9b0ae5fe45b8490f6068d4"
   },
   {
-   "title": "Process Engineer Intern (Summer 2027)",
-   "company": "Charter Steel",
-   "location": "Cleveland, OH",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6ab2eff61e4847ddae917359"
-  },
-  {
-   "title": "Industrial Engineer Intern",
-   "company": "Global Power Components",
-   "location": "Milwaukee, WI",
-   "area_group": "Midwest",
-   "work_model": "On Site",
-   "visa_bucket": "B - Unclear",
-   "visa_reason": "No job description available - visa status not stated",
-   "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6acfc518c9f40bec907fe042"
-  },
-  {
-   "title": "Weld Development Engineer Intern",
-   "company": "Hydromenta Systems",
-   "location": "CA",
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Walnut Creek, CA",
    "area_group": "West",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6acfc1d82cc4e9d17e90a36c"
+   "url": "https://jobright.ai/jobs/info/6a9b0b169c24314c35f97784"
   },
   {
-   "title": "Radio Frequency (RF) Engineering Intern",
-   "company": "North Carolina Department of Agriculture and Consumer Services",
-   "location": "Boulder, CO",
-   "area_group": "West",
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Aurora, OH",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6acfbc3812303667b989fde9"
+   "url": "https://jobright.ai/jobs/info/6a9b0aed90a313642c6584cd"
   },
   {
-   "title": "Project Engineer Internship - Spring 2027",
-   "company": "Skanska",
-   "location": "Boston, MA",
-   "area_group": "Northeast",
+   "title": "Engineering Co-op - Summer 2027",
+   "company": "RoviSys",
+   "location": "Oakbrook Terrace, IL",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a97107cb22f636c81415a14"
+   "url": "https://jobright.ai/jobs/info/6a9b0b2790a313642c6584d2"
   },
   {
-   "title": "Data & Control Systems Engineer Intern",
-   "company": "Structavia Consulting Engineers",
-   "location": "CA",
-   "area_group": "West",
+   "title": "Project Engineering Intern - Senior",
+   "company": "V2X Inc",
+   "location": "Indianapolis, IN",
+   "area_group": "Midwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6acfc43d78d51ae69ce07ea0"
+   "url": "https://jobright.ai/jobs/info/6ad12172ae21edea94fd3ebe"
   },
   {
-   "title": "Transmission Engineering Intern - Summer 2027",
+   "title": "MEP Engineering Intern - Summer 2027",
    "company": "WSP in the U.S.",
-   "location": "Mount Laurel, NJ",
-   "area_group": "Northeast",
+   "location": "Houston, TX",
+   "area_group": "Southwest",
    "work_model": "On Site",
    "visa_bucket": "B - Unclear",
    "visa_reason": "No job description available - visa status not stated",
    "fit_score": 47,
-   "url": "https://jobright.ai/jobs/info/6a9724f0246d697dcee039d8"
+   "url": "https://jobright.ai/jobs/info/6ab43147d2f5fbd604be2027"
   }
  ]
 }
